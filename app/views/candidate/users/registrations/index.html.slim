@@ -1,0 +1,13 @@
+- error = @candidate.errors.messages[:'info.place_id'].any? ? 'is-invalid' : ''
+h2 Регистрация
+= simple_form_for @candidate, url: candidate_users_registrations_path do |f|
+  = f.simple_fields_for :info do |p|
+    .form-group
+      = p.label :place_id
+      input class="form-control geocomplete #{error}"
+    = p.input :place_id, as: :hidden
+    = p.input :name
+  = f.input :email
+  = f.input :password
+  = f.input :password_confirmation
+  = f.button :submit, 'Sign up', class: 'btn btn-primary'

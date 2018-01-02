@@ -1,0 +1,7 @@
+ru:
+  activerecord:
+    attributes:
+      candidate:
+        place_id: Город
+        password: Пароль
+        password_confirmation: Повторите

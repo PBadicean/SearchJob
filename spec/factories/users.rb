@@ -24,18 +24,12 @@
 #  index_users_on_role                  (role)
 #
 
-class Candidate < User
+FactoryBot.define do
+  sequence(:email) { |n| "user#{n}@test.com" }
 
-  include Shared::Roles
-
-  default_scope { candidate }
-
-  has_one :info,
-           foreign_key: :user_id,
-           class_name: 'Candidate::Info',
-           inverse_of: :user,
-           dependent: :destroy
-
-  accepts_nested_attributes_for :info
-
+  factory :user do
+    email
+    password '123456789'
+    password_confirmation '123456789'
+  end
 end
