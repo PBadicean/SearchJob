@@ -5,7 +5,7 @@ module FlashHelper
       success: "alert-success",
       error: "alert-danger",
       alert: "alert-warning",
-      notice: "alert-info"
+      notice: "alert-success"
     }[flash_type.to_sym] || flash_type.to_s
   end
 

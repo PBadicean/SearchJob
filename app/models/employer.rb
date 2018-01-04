@@ -30,4 +30,12 @@ class Employer < User
 
   default_scope { employer }
 
+  has_one :info,
+           foreign_key: :user_id,
+           class_name: 'Employer::Info',
+           inverse_of: :user,
+           dependent: :destroy
+
+  accepts_nested_attributes_for :info
+
 end

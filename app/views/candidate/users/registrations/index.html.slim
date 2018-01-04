@@ -5,7 +5,7 @@ h2 Регистрация
     .form-group
       = p.label :place_id
       input class="form-control geocomplete #{error}"
-    = p.input :place_id, as: :hidden
+    = p.input :place_id, as: :hidden, input_html: { class: 'hidden-geocomplete' }
     = p.input :name
   = f.input :email
   = f.input :password

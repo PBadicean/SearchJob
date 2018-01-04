@@ -1,13 +1,13 @@
-class Candidate::Users::RegistrationsController < ApplicationController
+class Employer::Users::RegistrationsController < ApplicationController
 
   def index
-    @candidate = Candidate.new
-    @candidate.build_info
+    @employer = Employer.new
+    @employer.build_info
   end
 
   def create
-    @candidate = Candidate.new(candidate_params)
-    if @candidate.save
+    @employer = Employer.new(employer_params)
+    if @employer.save
       flash[:notice] = 'Вы успешно зарегестрировались, теперь войдите в ваш аккаунт'
       redirect_to new_user_session_path
     else
@@ -17,11 +17,10 @@ class Candidate::Users::RegistrationsController < ApplicationController
 
   private
 
-  def candidate_params
-    params.require(:candidate).permit(
+  def employer_params
+    params.require(:employer).permit(
       :email, :password, :password_confirmation,
-      info_attributes: %i[place_id name]
+      info_attributes: %i[company_name name]
     )
   end
-
 end
