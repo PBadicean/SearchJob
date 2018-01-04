@@ -19,4 +19,19 @@ feature 'Sign up' do
     expect(current_path).to eq(new_user_session_path)
     expect(page).to have_content('Вы успешно зарегестрировались, теперь войдите в ваш аккаунт')
   end
+
+  scenario 'Employer tries to sign up' do
+    visit root_path
+    click_on 'Sign up employer'
+    visit employer_users_registrations_path
+
+    fill_in 'Name', with: 'polina'
+    fill_in 'Company name', with: 'search_job'
+    fill_in 'Password', with: '123456789'
+    fill_in 'Password confirmation', with:'123456789'
+    click_on 'Sign up'
+
+    expect(current_path).to eq(new_user_session_path)
+    expect(page).to have_content('Вы успешно зарегестрировались, теперь войдите в ваш аккаунт')
+  end
 end
