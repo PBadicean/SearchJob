@@ -22,6 +22,9 @@ Rails.application.routes.draw do
     root 'dashboard#show', as: :root
   end
 
+  resources :categories do
+  end
+
   get 'welcome/index'
   root 'welcome#index'
 end

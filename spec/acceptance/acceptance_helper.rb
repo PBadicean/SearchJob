@@ -5,7 +5,7 @@ RSpec.configure do |config|
 
   Capybara.server = :puma
 
-  # config.include AcceptanceMacros, type: :feature
+  config.include AcceptanceMacros, type: :feature
 
   config.use_transactional_fixtures = false
 

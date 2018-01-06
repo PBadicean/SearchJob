@@ -6,7 +6,7 @@ html
     = csrf_meta_tags
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
   body
-    = render "layout/navbar_#{current_user.present? ? current_user.role.to_s : 'main'}"
+    = render "layouts/navbar_#{current_user.present? ? current_user.role.to_s : 'main'}"
     main.container
       = flash_messages
       = yield

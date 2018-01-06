@@ -29,6 +29,14 @@ FactoryBot.define do
 
   factory :user do
     email
+    role {[0, 1, 2].sample}
+    password '123456789'
+    password_confirmation '123456789'
+  end
+
+  factory :candidate do
+    email
+    role :candidate
     password '123456789'
     password_confirmation '123456789'
   end
