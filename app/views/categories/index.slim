@@ -1,0 +1,11 @@
+/ h1= @category.nil? ? 'Main categories' : @category.name
+
+= @categories.inspect
+  / = category.inspect
+  / = link_to category.name, category_path(category)
+  / = link_to 'Edit', edit_category_path(category) unless category.parent_category.nil?
+  / = link_to 'Destroy', category_path(category), method: :delete unless category.parent_category.nil?
+br
+  = link_to 'New sub-category', new_category_path(id: @category) unless @category.nil?
+p
+  = link_to 'Back', @category.parent_category.nil? ? categories_path : category_path(@category.parent_category) unless @category.nil?
