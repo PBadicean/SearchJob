@@ -38,4 +38,8 @@ class Candidate < User
 
   accepts_nested_attributes_for :info
 
+  has_many :resumes,
+           foreign_key: :user_id,
+           dependent: :destroy
+
 end

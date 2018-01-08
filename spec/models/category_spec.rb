@@ -3,7 +3,7 @@
 # Table name: categories
 #
 #  id         :integer          not null, primary key
-#  text       :string
+#  name       :string
 #  parent_id  :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null

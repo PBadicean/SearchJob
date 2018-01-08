@@ -3,7 +3,7 @@
 # Table name: categories
 #
 #  id         :integer          not null, primary key
-#  text       :string
+#  name       :string
 #  parent_id  :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -19,5 +19,7 @@ class Category < ApplicationRecord
 
   has_many :subcategories, class_name: "Category", foreign_key: "parent_id", dependent: :destroy
   belongs_to :parent_category, class_name: "Category", optional: true
+
+  scope :parent_category, -> { where(parent_id: self.parent_id) }
 
 end

@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180104180530) do
+ActiveRecord::Schema.define(version: 20180107110548) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "candidate_info", force: :cascade do |t|
-    t.string "name"
-    t.string "place_id"
+    t.string "name", null: false
+    t.string "place_id", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -25,28 +25,31 @@ ActiveRecord::Schema.define(version: 20180104180530) do
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string "text"
+    t.string "name"
     t.bigint "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["parent_id"], name: "index_categories_on_parent_id"
   end
 
-  create_table "category", force: :cascade do |t|
-    t.string "text"
-    t.bigint "parent_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["parent_id"], name: "index_category_on_parent_id"
-  end
-
   create_table "employer_info", force: :cascade do |t|
-    t.string "name"
-    t.string "company_name"
+    t.string "name", null: false
+    t.string "company_name", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_employer_info_on_user_id"
+  end
+
+  create_table "resumes", force: :cascade do |t|
+    t.string "position", null: false
+    t.integer "salary", null: false
+    t.integer "user_id", null: false
+    t.integer "category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_resumes_on_category_id"
+    t.index ["user_id"], name: "index_resumes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
