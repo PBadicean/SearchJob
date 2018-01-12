@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180107110548) do
+ActiveRecord::Schema.define(version: 20180112111905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,15 @@ ActiveRecord::Schema.define(version: 20180107110548) do
     t.index ["user_id"], name: "index_employer_info_on_user_id"
   end
 
+  create_table "experiences", force: :cascade do |t|
+    t.datetime "date_start", null: false
+    t.datetime "date_end", null: false
+    t.string "company", null: false
+    t.string "duty", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "resumes", force: :cascade do |t|
     t.string "position", null: false
     t.integer "salary", null: false
@@ -48,6 +57,9 @@ ActiveRecord::Schema.define(version: 20180107110548) do
     t.integer "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "about_me"
+    t.string "skills"
+    t.integer "experience_id"
     t.index ["category_id"], name: "index_resumes_on_category_id"
     t.index ["user_id"], name: "index_resumes_on_user_id"
   end
