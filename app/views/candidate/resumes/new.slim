@@ -1,0 +1,14 @@
+= render 'common/errors', resource: @resume
+= simple_form_for [:candidate, @resume] do |f|
+  = f.input :position
+  = f.input :salary
+  = f.input :category_id, collection: Category.where(parent_id: nil), as: :grouped_select, group_method: :subcategories, prompt: "Select One"
+  = f.input :about_me
+  = f.input :skills
+  h2 Опыт работы
+  = f.simple_fields_for :experience do |p|
+    = p.input :date_start, as: :date
+    = p.input :date_end, as: :date
+    = p.input :company
+    = p.input :duty
+  = f.button :submit, class: 'btn btn-primary'

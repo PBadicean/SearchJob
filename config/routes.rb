@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   namespace :candidate do
     root 'dashboard#show', as: :root
+    resources :resumes
     namespace :users do
       get :registrations, to: 'registrations#index'
       post :registrations, to: 'registrations#create'
@@ -20,10 +21,9 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root 'dashboard#show', as: :root
+    resources :categories
   end
 
-  resources :categories do
-  end
 
   get 'welcome/index'
   root 'welcome#index'
