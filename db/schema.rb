@@ -54,13 +54,11 @@ ActiveRecord::Schema.define(version: 20180112111905) do
     t.string "position", null: false
     t.integer "salary", null: false
     t.integer "user_id", null: false
-    t.integer "category_id", null: false
+    t.integer "about_me", null: false
+    t.bigint "experience_id_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "about_me"
-    t.string "skills"
-    t.integer "experience_id"
-    t.index ["category_id"], name: "index_resumes_on_category_id"
+    t.index ["experience_id_id"], name: "index_resumes_on_experience_id_id"
     t.index ["user_id"], name: "index_resumes_on_user_id"
   end
 

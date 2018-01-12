@@ -8,7 +8,6 @@ class Candidate::ResumesController < Candidate::BaseController
   end
 
   def index
-    return @resumes = Resume.all if current_user.admin?
     @resumes = @candidate.resumes
   end
 
@@ -29,12 +28,12 @@ class Candidate::ResumesController < Candidate::BaseController
 
   def resume_params
     params.require(:resume).permit(
-      :position, :salary, :category_id, :skills, :about_me,
+      :position, :salary, :category_id, :about_me,
       experience_attributes: %i[company duty date_start date_end]
     )
   end
 
   def set_candidate
-    @candidate = Candidate.where(id: current_user).first
+    @candidate = Candidate.find(current_user)
   end
 end

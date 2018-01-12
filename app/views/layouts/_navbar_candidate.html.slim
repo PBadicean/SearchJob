@@ -3,8 +3,8 @@ nav.navbar.navbar-expand-sm.navbar-dark.bg-dark.mb-4
   #nav-content.collapse.navbar-collapse.justify-content-end
     ul.navbar-nav
       = link_to 'New resume',
-        new_candidate_resume_path,
-        class: 'nav-link'
+                 new_candidate_resume_path,
+                 class: 'nav-link'
       = link_to 'Sign out',
                  destroy_user_session_path,
                  method: :delete,
