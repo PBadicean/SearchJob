@@ -1,0 +1,20 @@
+= render 'common/errors', resource: @resume
+= simple_form_for path do |f|
+  = f.input :position
+  = f.input :salary
+  = f.input :category_id,
+            collection: Category.where(parent_id: nil),
+            as: :grouped_select,
+            group_method: :subcategories,
+            prompt: 'Select One'
+  = f.input :about_me, as: :text
+
+  h2 Опыт работы
+  = f.simple_fields_for :experiences do |experience|
+    = render 'experience_fields', :f => experience
+
+  .form-group
+    = link_to_add_association 'add experience', f, :experiences, class: 'btn btn-info btn-sm'
+
+  .text-right
+    = f.button :submit, class: 'btn btn-primary'

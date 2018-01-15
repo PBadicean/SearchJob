@@ -24,7 +24,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rails-controller-testing'
 gem 'carrierwave'
 gem 'remotipart'
-gem "cocoon"
+gem 'cocoon', '~> 1.2.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

@@ -1,18 +1,5 @@
-= render 'common/errors', resource: @resume
-= simple_form_for [:candidate, @resume] do |f|
-  = f.input :position
-  = f.input :salary
-  = f.input :category_id,
-            collection: Category.where(parent_id: nil),
-            as: :grouped_select,
-            group_method: :subcategories,
-            prompt: 'Select One'
-  = f.input :about_me
-  = f.input :skills
-  h2 Опыт работы
-  = f.simple_fields_for :experience do |p|
-    = p.input :date_start, as: :date
-    = p.input :date_end, as: :date
-    = p.input :company
-    = p.input :duty
-  = f.button :submit, class: 'btn btn-primary'
+.row
+  .col-md-7
+    = render 'form', path: [:candidate, @resume]
+  .col-md-5
+    | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

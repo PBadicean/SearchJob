@@ -270,7 +270,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   capybara-webkit
   carrierwave
-  cocoon
+  cocoon (~> 1.2.0)
   coffee-rails (~> 4.2)
   database_cleaner
   devise
