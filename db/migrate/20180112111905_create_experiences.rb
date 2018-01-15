@@ -5,6 +5,7 @@ class CreateExperiences < ActiveRecord::Migration[5.1]
       t.datetime :date_end, null: false
       t.string :company, null: false
       t.string :duty, null: false
+      t.references :resume, null: false
 
       t.timestamps
     end
