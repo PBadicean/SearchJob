@@ -4,7 +4,6 @@ class Candidate::ResumesController < Candidate::BaseController
 
   def new
     @resume = Resume.new
-    @resume.build_experience
   end
 
   def index
@@ -29,11 +28,11 @@ class Candidate::ResumesController < Candidate::BaseController
   def resume_params
     params.require(:resume).permit(
       :position, :salary, :category_id, :about_me,
-      experience_attributes: %i[company duty date_start date_end]
+      experiences_attributes: [:date_start, :date_end, :duty, :company ]
     )
   end
 
   def set_candidate
-    @candidate = Candidate.find(current_user)
+    @candidate = Candidate.find(current_user.id)
   end
 end

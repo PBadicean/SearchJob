@@ -18,6 +18,8 @@
 
 class Experience < ApplicationRecord
 
-  has_many :resumes
+  belongs_to :resume
+
+  validates :date_start, :date_end, :duty, :company, presence: true
 
 end

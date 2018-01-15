@@ -1,0 +1,14 @@
+.nested-fields.row
+  .col-md-6.date_start
+    = f.input :date_start, as: :date, order: [:month, :year]
+  .col-md-6.date_end
+    = f.input :date_end, as: :date, order: [:month, :year]
+  .col-md-12
+    = f.input :company
+  .col-md-12
+    = f.input :duty, as: :text
+  .col-md-12.form-group
+    = link_to_remove_association 'remove experience',
+        f,
+        data: { confirm: 'do you really want to do this?' },
+        class: 'btn btn-danger btn-sm'

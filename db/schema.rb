@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20180112111905) do
     t.string "position", null: false
     t.integer "salary", null: false
     t.integer "user_id", null: false
-    t.integer "about_me", null: false
+    t.string "about_me", null: false
     t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

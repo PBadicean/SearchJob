@@ -11,9 +11,9 @@
 // about supported directives.
 //
 //= require jquery3
+//= require cocoon
 //= require popper
 //= require bootstrap
 //= require rails-ujs
-//= require turbolinks
 //= require jquery.geocomplete
 //= require_tree .
