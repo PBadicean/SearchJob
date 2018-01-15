@@ -46,8 +46,10 @@ ActiveRecord::Schema.define(version: 20180112111905) do
     t.datetime "date_end", null: false
     t.string "company", null: false
     t.string "duty", null: false
+    t.bigint "resume_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["resume_id"], name: "index_experiences_on_resume_id"
   end
 
   create_table "resumes", force: :cascade do |t|
@@ -55,10 +57,10 @@ ActiveRecord::Schema.define(version: 20180112111905) do
     t.integer "salary", null: false
     t.integer "user_id", null: false
     t.integer "about_me", null: false
-    t.bigint "experience_id_id", null: false
+    t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["experience_id_id"], name: "index_resumes_on_experience_id_id"
+    t.index ["category_id"], name: "index_resumes_on_category_id"
     t.index ["user_id"], name: "index_resumes_on_user_id"
   end
 
