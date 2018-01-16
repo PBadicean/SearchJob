@@ -5,6 +5,14 @@ html
     title RecruterApp
     = csrf_meta_tags
     = stylesheet_link_tag 'application', media: 'all'
+    link [
+      rel="stylesheet"
+      href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css"
+    ]
+    link [
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tag-it/2.0/css/jquery.tagit.min.css"
+    ]
   body
     = render "layouts/navbar_#{current_user.present? ? current_user.role.to_s : 'main'}"
     main.container
@@ -12,3 +20,4 @@ html
       = yield
       = render 'layouts/javascript'
       = javascript_include_tag 'application'
+      script src="https://cdnjs.cloudflare.com/ajax/libs/tag-it/2.0/js/tag-it.min.js"

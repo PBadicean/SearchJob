@@ -10,6 +10,7 @@
 #  category_id :integer          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  tags        :string
 #
 # Indexes
 #
@@ -25,5 +26,10 @@ RSpec.describe Resume, type: :model do
 
   it { should belong_to(:user) }
   it { should belong_to(:category) }
+
+  it { should validate_presence_of :tags }
+  it { should validate_presence_of :about_me }
+  it { should validate_presence_of :salary }
+  it { should validate_presence_of :position }
 
 end
