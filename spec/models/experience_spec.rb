@@ -8,8 +8,6 @@
 #  company    :string           not null
 #  duty       :string           not null
 #  resume_id  :integer          not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
 #
 # Indexes
 #

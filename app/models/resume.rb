@@ -23,8 +23,8 @@ class Resume < ApplicationRecord
   belongs_to :category
   has_many :experiences
 
-  accepts_nested_attributes_for :experiences, reject_if: :all_blank, allow_destroy: true
-
   validates :position, :salary, :about_me, presence: true
+
+  accepts_nested_attributes_for :experiences, reject_if: :all_blank, allow_destroy: true
 
 end

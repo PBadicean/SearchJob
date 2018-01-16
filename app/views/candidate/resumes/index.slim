@@ -1,4 +1,4 @@
 - @resumes.each do |resume|
   ul
     li
-      = link_to "#{resume.category.name}", candidate_resume_path(resume)
+      = link_to "#{resume.position}", candidate_resume_path(resume)

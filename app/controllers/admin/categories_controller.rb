@@ -1,14 +1,13 @@
 class Admin::CategoriesController < Admin::BaseController
 
-  before_action :set_category, only: [:edit, :update, :destroy]
+  before_action :set_category, only: [:edit, :update, :destroy, :show]
 
   def index
     @category = nil
-    @categories = Category.where(parent_id: nil)
+    @categories = Category.only_parents
   end
 
   def show
-    @category = Category.find(params[:id])
     @categories = @category.subcategories
     render :index
   end
@@ -27,8 +26,6 @@ class Admin::CategoriesController < Admin::BaseController
     end
   end
 
-  def edit; end
-
   def update
     if @category.update(category_params)
       redirect_to admin_category_path(@category)
@@ -39,7 +36,7 @@ class Admin::CategoriesController < Admin::BaseController
 
   def destroy
     @category.destroy
-    redirect_to categories_path
+    redirect_to admin_categories_path
   end
 
   private

@@ -11,7 +11,7 @@ class Candidate::ResumesController < Candidate::BaseController
   end
 
   def create
-    @resume = Resume.new(resume_params.merge(user: current_user))
+    @resume = current_user.resumes.new(resume_params)
     if @resume.save
       redirect_to candidate_resumes_path
     else
@@ -28,7 +28,7 @@ class Candidate::ResumesController < Candidate::BaseController
   def resume_params
     params.require(:resume).permit(
       :position, :salary, :category_id, :about_me,
-      experiences_attributes: [:date_start, :date_end, :duty, :company ]
+      experiences_attributes: [:date_start, :date_end, :duty, :company]
     )
   end
 

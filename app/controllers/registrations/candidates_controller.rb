@@ -1,4 +1,6 @@
-class Candidate::Users::RegistrationsController < ApplicationController
+class Registrations::CandidatesController < ActionController::Base
+
+  layout 'application'
 
   def index
     @candidate = Candidate.new
@@ -8,7 +10,7 @@ class Candidate::Users::RegistrationsController < ApplicationController
   def create
     @candidate = Candidate.new(candidate_params)
     if @candidate.save
-      flash[:notice] = 'Вы успешно зарегестрировались, теперь войдите в ваш аккаунт'
+      flash[:notice] = t('devise.registrations.signed_up')
       redirect_to new_user_session_path
     else
       render :index
