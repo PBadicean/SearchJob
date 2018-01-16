@@ -2,11 +2,9 @@
 #
 # Table name: categories
 #
-#  id         :integer          not null, primary key
-#  name       :string
-#  parent_id  :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id        :integer          not null, primary key
+#  name      :string
+#  parent_id :integer
 #
 # Indexes
 #
@@ -19,6 +17,9 @@ class Category < ApplicationRecord
 
   has_many :subcategories, class_name: 'Category', foreign_key: 'parent_id', dependent: :destroy
   has_many :resumes
+
   belongs_to :parent_category, class_name: 'Category', optional: true
+
+  scope :only_parents, -> { where(parent_id: nil) }
 
 end

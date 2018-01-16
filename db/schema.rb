@@ -27,8 +27,6 @@ ActiveRecord::Schema.define(version: 20180112111905) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.bigint "parent_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["parent_id"], name: "index_categories_on_parent_id"
   end
 
@@ -47,8 +45,6 @@ ActiveRecord::Schema.define(version: 20180112111905) do
     t.string "company", null: false
     t.string "duty", null: false
     t.bigint "resume_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["resume_id"], name: "index_experiences_on_resume_id"
   end
 

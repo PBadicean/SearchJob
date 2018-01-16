@@ -7,4 +7,7 @@ table
       td= link_to 'Destroy', [:admin, category], method: :delete
 
   = link_to 'New category', new_admin_category_path(id: @category)
-  p= link_to 'Back', @category.parent_category.nil? ? admin_categories_path : admin_category_path(@category.parent_category) unless @category.nil?
+
+  - unless @category.nil?
+    - back_link_path = @category.parent_category.nil? ? admin_categories_path : admin_category_path(@category.parent_category)
+    p= link_to 'Back', back_link_path

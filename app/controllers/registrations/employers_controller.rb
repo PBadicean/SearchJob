@@ -1,4 +1,6 @@
-class Employer::Users::RegistrationsController < ApplicationController
+class Registrations::EmployersController < ActionController::Base
+
+  layout 'application'
 
   def index
     @employer = Employer.new
@@ -8,7 +10,7 @@ class Employer::Users::RegistrationsController < ApplicationController
   def create
     @employer = Employer.new(employer_params)
     if @employer.save
-      flash[:notice] = 'Вы успешно зарегестрировались, теперь войдите в ваш аккаунт'
+      flash[:notice] = t('devise.registrations.signed_up')
       redirect_to new_user_session_path
     else
       render :index

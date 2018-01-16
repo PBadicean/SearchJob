@@ -8,5 +8,4 @@ class Admin::BaseController < ApplicationController
     authorization_user! :admin
   end
 
-
 end
