@@ -27,7 +27,7 @@ class Candidate::ResumesController < Candidate::BaseController
 
   def resume_params
     params.require(:resume).permit(
-      :position, :salary, :category_id, :about_me,
+      :position, :salary, :category_id, :about_me, :tags,
       experiences_attributes: [:date_start, :date_end, :duty, :company]
     )
   end
