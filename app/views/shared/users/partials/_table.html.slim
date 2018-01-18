@@ -6,5 +6,10 @@ tr
   tr
     td = user.email
     td = user.name
-    td class="edit-user-#{user.id}"
-      = link_to 'Edit', edit_admin_users_admin_path(user)
+    td class="edit-user-#{user.id} destroy-user-#{user.id}"
+      = link_to 'Edit',
+                 edit_admin_users_admin_path(user)
+      br
+      = link_to 'Destroy',
+                 admin_users_admin_path(user),
+                 method: :delete

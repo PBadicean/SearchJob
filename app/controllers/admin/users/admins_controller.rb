@@ -1,6 +1,6 @@
 class Admin::Users::AdminsController < Admin::BaseController
 
-  before_action :set_admin, only: [:edit, :update]
+  before_action :set_admin, only: [:edit, :update, :destroy]
 
   def index
     @users = Admin.all
@@ -28,6 +28,13 @@ class Admin::Users::AdminsController < Admin::BaseController
       render :edit
     end
   end
+
+  def destroy
+    @admin.destroy
+    flash[:notice] = t('messages.admins.destroyed')
+    redirect_to admin_users_admins_path
+  end
+
 
   private
 
