@@ -34,5 +34,5 @@ class User < ApplicationRecord
   enum role: { admin: 0, employer: 1, candidate: 2}
 
   validates :email, uniqueness: true
-
+  validates :name, presence: true
 end

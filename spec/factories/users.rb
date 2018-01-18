@@ -26,8 +26,10 @@
 
 FactoryBot.define do
   sequence(:email) { |n| "user#{n}@test.com" }
+  sequence(:name) { |n| "user#{n}" }
 
   factory :user do
+    name
     email
     role {[0, 1, 2].sample}
     password '123456789'
@@ -35,8 +37,18 @@ FactoryBot.define do
   end
 
   factory :candidate do
+    name
     email
     role :candidate
+    password '123456789'
+    password_confirmation '123456789'
+  end
+
+
+  factory :admin do
+    name
+    email
+    role :admin
     password '123456789'
     password_confirmation '123456789'
   end

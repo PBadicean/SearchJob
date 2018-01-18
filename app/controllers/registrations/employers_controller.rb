@@ -21,8 +21,8 @@ class Registrations::EmployersController < ActionController::Base
 
   def employer_params
     params.require(:employer).permit(
-      :email, :password, :password_confirmation,
-      info_attributes: %i[company_name name]
+      :email, :password, :password_confirmation, :name,
+      info_attributes: %i[company_name]
     )
   end
 end

@@ -2,7 +2,7 @@ h2 Регистрация
 = simple_form_for @employer, url: registrations_employers_path do |f|
   = f.simple_fields_for :info do |p|
     = p.input :company_name
-    = p.input :name
+  = f.input :name
   = f.input :email
   = f.input :password
   = f.input :password_confirmation

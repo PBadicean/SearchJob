@@ -21,8 +21,8 @@ class Registrations::CandidatesController < ActionController::Base
 
   def candidate_params
     params.require(:candidate).permit(
-      :email, :password, :password_confirmation,
-      info_attributes: %i[place_id name]
+      :email, :password, :password_confirmation, :name,
+      info_attributes: %i[place_id]
     )
   end
 

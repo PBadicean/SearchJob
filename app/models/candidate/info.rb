@@ -21,6 +21,6 @@ class Candidate::Info < ApplicationRecord
 
   belongs_to :user
 
-  validates :place_id, :name, presence: true
+  validates :place_id, presence: true
 
 end
