@@ -24,7 +24,7 @@ class Resume < ApplicationRecord
   belongs_to :category
   has_many :experiences
 
-  validates :position, :salary, :about_me, :tags presence: true
+  validates :position, :salary, :about_me, :tags, presence: true
 
   accepts_nested_attributes_for :experiences, reject_if: :all_blank, allow_destroy: true
 

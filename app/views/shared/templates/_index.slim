@@ -1,0 +1,12 @@
+.row
+  div class="col-md-#{filter ? 9 : 12}"
+    .box
+      .box-body
+        .table-responsive
+          table.table.table-bordered.table-hover
+            tbody
+              = table
+
+  - if filter
+    .col-md-3
+      = filter
