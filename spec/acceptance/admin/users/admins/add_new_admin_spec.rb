@@ -10,12 +10,12 @@ feature 'Admin create new admin' do
     click_on 'New admin'
     fill_in 'Name', with: 'Name'
     fill_in 'Email', with: 'test@mail.ru'
-    fill_in 'Password confirmation', with: '123456'
-
     fill_in 'Password', with: '123456'
+    fill_in 'Password confirmation', with: '123456'
     click_on 'Save'
 
-    expect(page).to have_content 'New Admin successful Added'
+    expect(current_path).to eq(admin_users_admins_path)
+    expect(page).to have_content (I18n.t('messages.admins.registred'))
   end
 
   scenario 'Admin create invalid object' do

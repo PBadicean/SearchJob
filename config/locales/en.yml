@@ -33,3 +33,6 @@ en:
   hello: "Hello world"
   messages:
     access_denied: 'Access Denied'
+    admins:
+      registred: 'New Admin successful Added'
+      updated: 'Admin successful updated'

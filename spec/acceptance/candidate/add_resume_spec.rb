@@ -21,8 +21,9 @@ feature 'Candidate makes resume' do
     fill_in 'Position', with: 'Ruby Programmer'
     fill_in 'Salary', with: 2500
     fill_in 'About me', with: 'About'
-    fill_in 'Tags', with: 'Ruby'
-
+    within '.tagit' do
+      first('input').set('Ruby')
+    end
     select "Programming", from: "resume[category_id]"
 
     click_on 'add experience'
