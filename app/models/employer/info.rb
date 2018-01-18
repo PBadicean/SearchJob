@@ -21,6 +21,6 @@ class Employer::Info < ApplicationRecord
 
   belongs_to :user
 
-  validates :company_name, :name, presence: true
+  validates :company_name, presence: true
 
 end
