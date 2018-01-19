@@ -3,7 +3,7 @@ class Admin::Users::AdminsController < Admin::BaseController
   before_action :set_admin, only: [:edit, :update, :destroy]
 
   def index
-    @users = Admin.all
+    @users = Admin.all.page(params[:page])
   end
 
   def new
