@@ -6,6 +6,8 @@
           table.table.table-bordered.table-hover
             tbody
               = table
+      = render 'shared/paginate', collection: collection
+
 
   - if filter
     .col-md-3
