@@ -41,3 +41,7 @@ en:
       registred: 'New Candidate successful Added'
       updated: 'Candidate successful updated'
       destroyed: 'Candidate destroyed'
+    employers:
+      registred: 'New Employer successful Added'
+      updated: 'Employer successful updated'
+      destroyed: 'Employer destroyed'
