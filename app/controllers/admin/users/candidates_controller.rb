@@ -43,8 +43,7 @@ class Admin::Users::CandidatesController < Admin::BaseController
   end
 
   def candidate_params
-    params.require(:candidate).permit :email, :name, :password,
-                                      :password_confirmation,
+    params.require(:candidate).permit :email, :name, :password, :password_confirmation,
                                       info_attributes: %i[place_id]
   end
 

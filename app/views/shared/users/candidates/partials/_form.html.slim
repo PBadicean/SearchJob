@@ -1,6 +1,6 @@
-- error = @candidate.errors.messages[:'info.place_id'].any? ? 'is-invalid' : ''
-= render 'common/errors', resource: @candidate
-= simple_form_for [:admin, :users, @candidate] do |f|
+- error = candidate.errors.messages[:'info.place_id'].any? ? 'is-invalid' : ''
+
+= simple_form_for candidate, url: url do |f|
   = f.simple_fields_for :info do |p|
     .form-group
       = p.label :place_id
@@ -10,4 +10,4 @@
   = f.input :email
   = f.input :password
   = f.input :password_confirmation
-  = f.button :submit, 'Save', class: 'btn btn-primary'
+  = f.button :submit, 'Sign up', class: 'btn btn-primary'

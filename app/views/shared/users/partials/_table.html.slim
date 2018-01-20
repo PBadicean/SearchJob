@@ -1,0 +1,12 @@
+tr
+  th email
+  th name
+  th action
+- users.each do |user|
+  tr
+    td = user.email
+    td = user.name
+    td class="edit-user-#{user.id} destroy-user-#{user.id}"
+      = link_to 'Edit', [:edit, :admin, :users, user]
+      br
+      = link_to 'Destroy', [:admin, :users, user], method: :delete

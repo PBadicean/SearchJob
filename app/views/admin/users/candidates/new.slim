@@ -1,3 +1,3 @@
-= render 'shared/templates/form',
-  form: render('shared/users/candidates/partials/form', user: @user),
-  actions: nil
+= render 'shared/users/candidates/partials/form',
+  url: [:admin, :users, @candidate],
+  candidate: @candidate
