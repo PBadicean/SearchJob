@@ -37,3 +37,7 @@ en:
       registred: 'New Admin successful Added'
       updated: 'Admin successful updated'
       destroyed: 'Admin destroyed'
+    candidates:
+      registred: 'New Candidate successful Added'
+      updated: 'Candidate successful updated'
+      destroyed: 'Candidate destroyed'

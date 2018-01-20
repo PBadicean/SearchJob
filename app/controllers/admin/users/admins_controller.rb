@@ -35,7 +35,6 @@ class Admin::Users::AdminsController < Admin::BaseController
     redirect_to admin_users_admins_path
   end
 
-
   private
 
   def set_admin
