@@ -1,4 +1,17 @@
-- @resumes.each do |resume|
-  ul
-    li
-      = link_to "#{resume.position}", candidate_resume_path(resume)
+.row
+  div class="col-md-9"
+    .box-body
+      .table-responsive
+        table.table.table-bordered.table-hover
+          tbody
+          tr
+            th Position
+            th Salary
+            th Action
+          - @resumes.each do |resume|
+            tr
+              td
+                = link_to "#{resume.position}",
+                          candidate_resume_path(resume)
+              td = resume.salary
+              td = link_to 'Edit', edit_candidate_resume_path(resume)
