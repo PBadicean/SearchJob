@@ -27,6 +27,10 @@ Rails.application.routes.draw do
     resources :employers
   end
 
+
+  resources :resumes do
+  end
+
   get 'welcome/index'
   root 'welcome#index'
 end

@@ -1,0 +1,4 @@
+- @resumes.each do |resume|
+  ul
+    li
+      = link_to "#{resume.position}", resume_path(resume)
