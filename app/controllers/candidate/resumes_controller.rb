@@ -33,16 +33,12 @@ class Candidate::ResumesController < Candidate::BaseController
     end
   end
 
-  def show
-    @resume = Resume.find(params[:id])
-  end
-
   private
 
   def resume_params
     params.require(:resume).permit(
       :position, :salary, :category_id, :about_me, :tags,
-      experiences_attributes: [:date_start, :date_end, :duty, :company]
+      experiences_attributes: [:id, :_destroy, :date_start, :date_end, :duty, :company]
     )
   end
 

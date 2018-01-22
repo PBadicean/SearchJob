@@ -10,8 +10,6 @@
             th Action
           - @resumes.each do |resume|
             tr
-              td
-                = link_to "#{resume.position}",
-                          candidate_resume_path(resume)
+              td = resume.position
               td = resume.salary
               td = link_to 'Edit', edit_candidate_resume_path(resume)
