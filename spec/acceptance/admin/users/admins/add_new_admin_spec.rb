@@ -3,10 +3,12 @@ require 'acceptance/acceptance_helper'
 feature 'Admin create new admin' do
   given(:admin) { create(:admin) }
 
-  scenario 'Admin create valid object' do
+  before do
     sign_in(admin)
     visit admin_root_path
+  end
 
+  scenario 'Admin create valid object' do
     click_on 'New admin'
     fill_in 'Name', with: 'Name'
     fill_in 'Email', with: 'test@mail.ru'
@@ -19,9 +21,6 @@ feature 'Admin create new admin' do
   end
 
   scenario 'Admin create invalid object' do
-    sign_in(admin)
-    visit admin_root_path
-
     click_on 'New admin'
     click_on 'Save'
 

@@ -15,10 +15,10 @@ feature 'Candidate edit resume' do
     click_on 'My Resumes'
 
     click_on 'Edit'
-    fill_in 'Position', with: 'React Programmer'
+    within('.resume_position'){ fill_in 'Position', with: 'React Programmer' }
     fill_in 'Salary', with: 3500
     fill_in 'About me', with: 'New About'
-    within('.tagit'){first('input').set('js')}
+    within('.tagit'){ first('input').set('js') }
     select "Programming", from: "resume[category_id]"
     within all(".remove-experience").last do
       click_on 'remove experience'
@@ -31,7 +31,8 @@ feature 'Candidate edit resume' do
       select 2016, from: select_date('date_end_1i')
       select 'May', from: select_date('date_end_2i')
       fill_in 'Company', with: 'Audi'
-      fill_in 'Duty', with: 'A variety of'
+      fill_in 'Duty', with: 'Duty Duty Duty'
+      fill_in 'Position', with: 'Junior'
     end
 
     click_on 'Update Resume'
@@ -41,6 +42,9 @@ feature 'Candidate edit resume' do
     expect(page).to have_content I18n.t('messages.resumes.updated')
 
     visit resume_path(resume)
+
+    expect(page).to_not have_content 'google'
+    expect(page).to_not have_content 'Junior'
     expect(page).to have_content resume.user.email
     expect(page).to have_content '3500'
     expect(page).to have_content 'React Programmer'
