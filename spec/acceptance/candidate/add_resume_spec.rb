@@ -2,16 +2,9 @@ require 'acceptance/acceptance_helper'
 
 feature 'Candidate makes resume' do
 
-  given(:candidate) { create(:candidate)}
-  given(:category) { create(:category)}
-
-  def select_date(date)
-    find(:xpath, ".//select[contains(@id,'#{date}')]")[:id]
-  end
-
-  before do
-    Category.create(name: 'Programming', parent_id: category.id)
-  end
+  given(:candidate)    { create(:candidate)}
+  given(:category)     { create(:category)}
+  given!(:subcategory) { create(:category, name: 'Programming', parent_id: category.id)}
 
   scenario 'add resume', js: true do
     sign_in(candidate)
@@ -21,7 +14,9 @@ feature 'Candidate makes resume' do
     fill_in 'Position', with: 'Ruby Programmer'
     fill_in 'Salary', with: 2500
     fill_in 'About me', with: 'About'
-    within('.tagit'){first('input').set('Ruby')}
+    within '.tagit' do
+      first('input').set('Ruby')
+    end
     select "Programming", from: "resume[category_id]"
 
     click_on 'add experience'
