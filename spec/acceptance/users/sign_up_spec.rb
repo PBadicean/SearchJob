@@ -13,7 +13,7 @@ feature 'Sign up' do
     fill_in 'Email', with: 'test@mail.ru'
     fill_in 'Password', with: '123456789'
     fill_in 'Password confirmation', with:'123456789'
-    click_on 'Sign up'
+    click_on 'Save'
 
     expect(current_path).to eq(new_user_session_path)
     expect(page).to have_content(I18n.t('devise.registrations.signed_up'))
@@ -28,7 +28,7 @@ feature 'Sign up' do
     fill_in 'Email', with: 'test@mail.ru'
     fill_in 'Password', with: '123456789'
     fill_in 'Password confirmation', with:'123456789'
-    click_on 'Sign up'
+    click_on 'Save'
 
     expect(current_path).to eq(new_user_session_path)
     expect(page).to have_content(I18n.t('devise.registrations.signed_up'))

@@ -12,4 +12,6 @@
             tr
               td = resume.position
               td = resume.salary
-              td = link_to 'Edit', edit_candidate_resume_path(resume)
+              td
+                = link_to 'Edit', edit_candidate_resume_path(resume)
+                p= link_to 'Preview', resume_path(resume)
