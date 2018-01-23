@@ -21,8 +21,7 @@ class Candidate::ResumesController < Candidate::BaseController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @resume.update(resume_params)
@@ -38,7 +37,7 @@ class Candidate::ResumesController < Candidate::BaseController
   def resume_params
     params.require(:resume).permit(
       :position, :salary, :category_id, :about_me, :tags,
-      experiences_attributes: [:id, :_destroy, :date_start, :date_end, :duty, :company]
+      experiences_attributes: [:id, :_destroy, :date_start, :date_end, :duty, :company, :position]
     )
   end
 

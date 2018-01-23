@@ -7,6 +7,8 @@
     = f.input :company
   .col-md-12
     = f.input :duty, as: :text
+  .col-md-12
+    = f.input :position
   .col-md-12.form-group.remove-experience
     = link_to_remove_association 'remove experience',
         f,

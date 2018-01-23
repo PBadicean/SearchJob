@@ -8,6 +8,7 @@
 #  company    :string           not null
 #  duty       :string           not null
 #  resume_id  :integer          not null
+#  position   :string           not null
 #
 # Indexes
 #

@@ -14,9 +14,7 @@ feature 'Candidate makes resume' do
     fill_in 'Position', with: 'Ruby Programmer'
     fill_in 'Salary', with: 2500
     fill_in 'About me', with: 'About'
-    within '.tagit' do
-      first('input').set('Ruby')
-    end
+    within('.tagit'){ first('input').set('Ruby') }
     select "Programming", from: "resume[category_id]"
 
     click_on 'add experience'
@@ -25,6 +23,7 @@ feature 'Candidate makes resume' do
     select 2013, from: select_date('date_end_1i')
     select 'December', from: select_date('date_end_2i')
     fill_in 'Company', with: 'Google'
+    within('.nested-fields'){ fill_in 'Position', with: 'Junior' }
     fill_in 'Duty', with: 'A variety of'
 
     click_on 'Create Resume'
