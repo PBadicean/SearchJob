@@ -3,7 +3,6 @@
 # Table name: employer_info
 #
 #  id           :integer          not null, primary key
-#  name         :string           not null
 #  company_name :string           not null
 #  user_id      :integer          not null
 #  created_at   :datetime         not null
