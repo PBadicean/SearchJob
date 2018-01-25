@@ -28,4 +28,8 @@ class Resume < ApplicationRecord
 
   accepts_nested_attributes_for :experiences, reject_if: :all_blank, allow_destroy: true
 
+  def tags_list
+    tags.split(',')
+  end
+
 end
