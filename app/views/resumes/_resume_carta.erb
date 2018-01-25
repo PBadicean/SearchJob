@@ -1,0 +1,41 @@
+<section class="section summary-section">
+  <div class="row">
+    <div class="col-md-3">
+      <%= image_tag "NoAvatar.jpg", alt: "", size: "150x170" %>
+    </div>
+    <div class="col-md-9">
+      <div class="row">
+        <div class="col-md-8">
+          <h2><%= @resume.position %></h2>
+        </div>
+        <div class="col-md-4">
+          <div class="float-right">
+            <h4><%= @resume.salary %> rub</h4>
+          </div>
+        </div>
+      </div>
+      <dl class="row">
+        <dt class="col-sm-3">Department</dt>
+        <dd class="col-sm-9">
+          <%= @resume.category.name %>
+        </dd>
+        <dt class="col-sm-3">Date of Birth</dt>
+        <dd class="col-sm-9">24/06/2000</dd>
+        <dt class="col-sm-3">Gender</dt>
+        <dd class="col-sm-9">Female</dd>
+        <dt class="col-sm-3">Email</dt>
+        <dd class="col-sm-9">
+          <%= @resume.user.email %>
+        </dd>
+        <dt class="col-sm-3">City</dt>
+        <dd class="col-sm-9">Milano</dd>
+        <dt class="col-sm-3 text-truncate">Employment:</dt>
+        <dd class="col-sm-9">Full-time, part-time employment, project work</dd>
+        <dt class="col-sm-3 text-truncate">Schedule:</dt>
+        <dd class="col-sm-9">full-time shift schedule, flexible schedule, remote work</dd>
+        <dt class="col-sm-3 text-truncate">About me:</dt>
+        <dd class="col-sm-9"><%= @resume.about_me %> </dd>
+      </dl>
+    </div>
+  </div>
+</section>

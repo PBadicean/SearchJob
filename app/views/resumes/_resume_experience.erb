@@ -1,0 +1,17 @@
+<section class="section experiences-section">
+  <h2 class="section-title"><i class="fa fa-briefcase"></i>Experiences</h2>
+  <%- @resume.experiences.each do|experience|%>
+    <div class="item">
+      <div class="meta">
+        <div class="upper-row">
+          <h3 class="job-title"><%=experience.position%></h3>
+          <div class="time"><%=experience.date_start.strftime('%F')%> - <%=experience.date_end.strftime('%F')%></div>
+        </div>
+        <div class="company"><%=experience.company%></div>
+      </div>
+      <div class="details">
+        <p><%=experience.duty%></p>
+      </div>
+    </div>
+  <%end%>
+</section>
