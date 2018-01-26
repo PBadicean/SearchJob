@@ -1,6 +1,6 @@
-- error = candidate.errors.messages[:'info.place_id'].any? ? 'is-invalid' : ''
+- error = user.errors.messages[:'info.place_id'].any? ? 'is-invalid' : ''
 
-= simple_form_for candidate, url: url do |f|
+= simple_form_for user, url: url do |f|
   = f.simple_fields_for :info do |p|
     .form-group
       = p.label :place_id

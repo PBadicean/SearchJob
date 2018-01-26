@@ -17,6 +17,9 @@
 #  updated_at             :datetime         not null
 #  role                   :integer
 #  name                   :string
+#  avatar                 :string
+#  birthday               :date
+#  gender                 :integer
 #
 # Indexes
 #
@@ -31,6 +34,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   enum role: { admin: 0, employer: 1, candidate: 2}
+  enum gender: { female: 0, male: 1}
 
   validates :name, presence: true
 

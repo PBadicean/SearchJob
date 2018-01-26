@@ -21,9 +21,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'simple_form'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'kaminari'
-
+gem 'carrierwave', '~> 1.0'
 gem 'rails-controller-testing'
-gem 'carrierwave'
 gem 'remotipart'
 gem 'cocoon', '~> 1.2.0'
 

@@ -28,8 +28,11 @@ Rails.application.routes.draw do
   end
 
 
-  resources :resumes do
-  end
+  resources :resumes
+
+  get 'profile', action: :edit, controller: 'profiles'
+  patch 'profile', action: :update, controller: 'profiles'
+  put 'profile', action: :update, controller: 'profiles'
 
   get 'welcome/index'
   root 'resumes#index'

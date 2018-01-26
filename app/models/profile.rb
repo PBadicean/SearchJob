@@ -28,22 +28,6 @@
 #  index_users_on_role                  (role)
 #
 
-class Candidate < User
-
-  include Shared::Roles
-
-  default_scope { candidate }
-
-  has_one :info,
-           foreign_key: :user_id,
-           class_name: 'Candidate::Info',
-           inverse_of: :user,
-           dependent: :destroy
-
-  accepts_nested_attributes_for :info
-
-  has_many :resumes,
-           foreign_key: :user_id,
-           dependent: :destroy
-
+class Profile < User
+  mount_uploader :avatar, AvatarUploader
 end
