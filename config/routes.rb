@@ -32,5 +32,5 @@ Rails.application.routes.draw do
   end
 
   get 'welcome/index'
-  root 'welcome#index'
+  root 'resumes#index'
 end

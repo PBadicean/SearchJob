@@ -42,3 +42,12 @@ Experience.create do |experience|
   experience.resume_id=Resume.first.try(:id)
   experience.duty='The official online destination for Call of Duty t-shirts, hoodies, jackets, hats, collectibles, posters, toys, and other exclusive apparel and accessories.'
 end
+
+Experience.create do |experience|
+  experience.date_start='04.06.2012'
+  experience.date_end='01.07.2014'
+  experience.position='TeamLead'
+  experience.company='Mail.ru'
+  experience.resume_id=Resume.first.try(:id)
+  experience.duty='The hoodies, jackets, hats, collectibles, posters, toys, and other official online destination for Call of Duty t-shirts,exclusive apparel and accessories.'
+end
