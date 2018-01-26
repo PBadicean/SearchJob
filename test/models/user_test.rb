@@ -17,6 +17,9 @@
 #  updated_at             :datetime         not null
 #  role                   :integer
 #  name                   :string
+#  avatar                 :string
+#  birthday               :date
+#  gender                 :integer
 #
 # Indexes
 #
