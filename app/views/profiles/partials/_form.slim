@@ -1,21 +1,18 @@
-= render 'common/errors', resource: @user
-= simple_form_for @user, url: profile_path do |f|
-  = f.label :avatar
-  p= f.file_field :avatar
-  = radio_button_tag(:gender, "male")
-  = label_tag(:gender_male,   "Male")
-  = radio_button_tag(:gender, "female")
-  = label_tag(:gender_female, "Female")
+= render 'common/errors', resource: candidate
+- error = candidate.errors.messages[:'info.place_id'].any? ? 'is-invalid' : ''
+= simple_form_for candidate, url: profile_path do |f|
+  = f.input :avatar
+  = f.input :name
+  = f.input :email
+  = f.input :gender, as: :radio_buttons,
+                     collection: ['Male', 'Female'],
+                     item_wrapper_class: 'inline'
   = f.input :birthday, as: :date, start_year: Date.today.year - 90,
                        end_year: Date.today.year - 12, discard_day: true,
                        order: [:month, :year]
-  - if current_user.admin?
-    = f.input :name
-    = f.input :email
-    = f.input :password
-    = f.input :password_confirmation
-    = f.button :submit, 'Save', class: 'btn btn-primary'
-  - else
-    = render "shared/users/#{user.role}s/partials/form",
-      url: [:registrations, user.role.pluralize.to_sym ],
-      user: user
+  = f.simple_fields_for :info do |p|
+    .form-group
+      = p.label :place_id
+    input class="form-control geocomplete #{error}"
+    = p.input :place_id, as: :hidden, input_html: { class: 'hidden-geocomplete' }
+  = f.button :submit, 'Save', class: 'btn btn-primary'

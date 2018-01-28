@@ -30,11 +30,13 @@
 
 class User < ApplicationRecord
 
+  mount_uploader :avatar, AvatarUploader
+
   devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable
 
   enum role: { admin: 0, employer: 1, candidate: 2}
-  enum gender: { female: 0, male: 1}
+  enum gender: { Female: 0, Male: 1}
 
   validates :name, presence: true
 

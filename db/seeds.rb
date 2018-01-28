@@ -8,6 +8,10 @@ Candidate.create do |candidate|
   candidate.email = 'candidate@mail.ru'
   candidate.name = 'Candidate'
   candidate.password = '123456'
+  candidate.birthday = Time.now
+  File.open('/Users/PBadichan/Desktop/SearchJob/public/uploads/user/avatar/1/1.png') do |f|
+    candidate.avatar = f
+  end
 end
 
 Employer.create do |employer|
