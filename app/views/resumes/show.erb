@@ -1,6 +1,6 @@
 <div class="main-wrapper">
-  <%= render 'resumes/partials/resume_card'%>
-  <%= render 'resumes/partials/resume_experience'%>
-  <%= render 'resumes/partials/resume_projects'%>
-  <%= render 'resumes/partials/resume_skills'%>
+  <%= render 'resumes/partials/resume_card', resume: @resume%>
+  <%= render 'resumes/partials/resume_experience', resume: @resume%>
+  <%= render 'resumes/partials/resume_projects', resume: @resume%>
+  <%= render 'resumes/partials/resume_skills', resume: @resume%>
 </div>

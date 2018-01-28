@@ -2,6 +2,9 @@ nav.navbar.navbar-expand-sm.navbar-dark.bg-dark.mb-4
   = link_to 'SearchJoB', root_path, class: 'navbar-brand'
   #nav-content.collapse.navbar-collapse.justify-content-end
     ul.navbar-nav
+      = link_to 'My Profile',
+                 profile_path,
+                 class: 'nav-link'
       = link_to 'New resume',
                  new_candidate_resume_path,
                  class: 'nav-link'
