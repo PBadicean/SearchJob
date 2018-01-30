@@ -2,7 +2,7 @@
   = f.simple_fields_for :info do |p|
     .form-group
       = p.label :place_id
-      input class="form-control geocomplete #{candidate.geocomplete_error}"
+      input class="form-control geocomplete #{candidate.error_class_name}"
     = p.input :place_id, as: :hidden, input_html: { class: 'hidden-geocomplete' }
   = f.input :name
   = f.input :email

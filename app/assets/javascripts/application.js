@@ -17,5 +17,4 @@
 //= require bootstrap
 //= require rails-ujs
 //= require jquery.geocomplete
-//= require bootstrap-datepicker
 //= require_tree .

@@ -1,18 +1,21 @@
 = render 'common/errors', resource: user
 = simple_form_for user, url: profile_path do |f|
+  - if user.avatar?
+    = image_tag user.avatar.url, alt: "", size: "150x170"
   = f.input :avatar
   = f.input :name
   = f.input :email
   = f.input :gender, as: :radio_buttons,
-                     collection: ['male', 'female'],
+                     collection: User.genders.keys,
                      item_wrapper_class: 'inline'
-  = f.input :birthday, as: :string, input_html: { class: "datepicker" }
+  = f.input :birthday, as: :date, start_year: Date.today.year-1,
+                       end_year: 1900, order: [ :day, :month, :year]
 
   - if current_user.candidate?
     = f.simple_fields_for :info do |p|
       .form-group
         = p.label :place_id
-      input class="form-control geocomplete #{user.geocomplete_error}"
+      input class="form-control geocomplete #{user.error_class_name}"
       = p.input :place_id, as: :hidden, input_html: { class: 'hidden-geocomplete' }
 
   - elsif current_user.employer?
