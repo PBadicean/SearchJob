@@ -9,4 +9,5 @@ tr
     td class="edit-user-#{user.id} destroy-user-#{user.id}"
       = link_to 'Edit', [:edit, :admin, :users, user]
       br
-      = link_to 'Destroy', [:admin, :users, user], method: :delete
+      = link_to 'Destroy', [:admin, :users, user], method: :delete,
+      data:  { confirm: "Are You Shure?" }

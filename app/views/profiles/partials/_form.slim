@@ -1,18 +1,22 @@
-= render 'common/errors', resource: candidate
-- error = candidate.errors.messages[:'info.place_id'].any? ? 'is-invalid' : ''
-= simple_form_for candidate, url: profile_path do |f|
+= render 'common/errors', resource: user
+= simple_form_for user, url: profile_path do |f|
   = f.input :avatar
   = f.input :name
   = f.input :email
   = f.input :gender, as: :radio_buttons,
-                     collection: ['Male', 'Female'],
+                     collection: ['male', 'female'],
                      item_wrapper_class: 'inline'
-  = f.input :birthday, as: :date, start_year: Date.today.year - 90,
-                       end_year: Date.today.year - 12, discard_day: true,
-                       order: [:month, :year]
-  = f.simple_fields_for :info do |p|
-    .form-group
-      = p.label :place_id
-    input class="form-control geocomplete #{error}"
-    = p.input :place_id, as: :hidden, input_html: { class: 'hidden-geocomplete' }
+  = f.input :birthday, as: :string, input_html: { class: "datepicker" }
+
+  - if current_user.candidate?
+    = f.simple_fields_for :info do |p|
+      .form-group
+        = p.label :place_id
+      input class="form-control geocomplete #{user.geocomplete_error}"
+      = p.input :place_id, as: :hidden, input_html: { class: 'hidden-geocomplete' }
+
+  - elsif current_user.employer?
+    = f.simple_fields_for :info do |p|
+      = p.input :company_name
+
   = f.button :submit, 'Save', class: 'btn btn-primary'
