@@ -7,7 +7,7 @@ class ProfilesController < ApplicationController
   def update
     if @user.update(user_params)
       flash[:notice] = t('messages.profile.updated')
-      redirect_to root_path
+      redirect_to profile_path
     else
       render :edit
     end
