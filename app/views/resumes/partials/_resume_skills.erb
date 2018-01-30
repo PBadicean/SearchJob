@@ -2,7 +2,7 @@
     <h2 class="section-title"><i class="fa fa-rocket"></i>Skills &amp; Proficiency</h2>
     <div class="skillset">
       <div class="item">
-        <%-resume.tags_list.each do |tag|%>
+        <%- resume.tags_list.each do |tag|%>
           <a class="btn-info"><%=tag%></a>
         <%end%>
       </div>

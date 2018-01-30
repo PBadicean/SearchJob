@@ -5,7 +5,7 @@ class ProfilesController < ApplicationController
   def edit; end
 
   def update
-    if @candidate.update(user_params)
+    if @user.update(user_params)
       flash[:notice] = t('messages.profile.updated')
       redirect_to root_path
     else
@@ -16,14 +16,14 @@ class ProfilesController < ApplicationController
   private
 
   def set_user
-    @candidate = Candidate.find current_user.id
-    @candidate.build_info
+    @user = current_user
+    @user.build_info unless @user.admin?
   end
 
   def user_params
-    params.require(:candidate).permit(
+    params.require(current_user.role.to_sym).permit(
       :email, :avatar, :name, :birthday, :gender,
-      info_attributes: %i[place_id]
+      info_attributes: %i[place_id company_name]
     )
   end
 
