@@ -25,6 +25,8 @@ gem 'carrierwave', '~> 1.0'
 gem 'rails-controller-testing'
 gem 'remotipart'
 gem 'cocoon', '~> 1.2.0'
+gem 'ransack', github: 'activerecord-hackery/ransack'
+gem 'jquery-inputmask-rails'
 gem 'bootstrap-datepicker-rails'
 
 group :development, :test do

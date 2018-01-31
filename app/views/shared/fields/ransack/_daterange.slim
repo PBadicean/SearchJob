@@ -1,0 +1,11 @@
+.input-daterange
+  = field
+  .row
+    .col-md-6
+      = f.input "#{field}_beginning_of_day_gteq",
+        label: 'between',
+        required: false
+    .col-md-6
+      = f.input "#{field}_end_of_day_lteq",
+        label: 'and',
+        required: false

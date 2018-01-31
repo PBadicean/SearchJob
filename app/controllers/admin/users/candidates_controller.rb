@@ -3,7 +3,8 @@ class Admin::Users::CandidatesController < Admin::BaseController
   before_action :set_candidate, only: [:edit, :update, :destroy]
 
   def index
-    @users = Candidate.all.page(params[:page])
+    @q = Candidate.ransack(params[:q])
+    @users = @q.result(distinct: true).page(params[:page])
   end
 
   def new
