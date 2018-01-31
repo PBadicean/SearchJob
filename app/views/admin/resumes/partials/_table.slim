@@ -1,0 +1,9 @@
+tr
+  th email of avtor
+  th position
+  th= sort_link @q, :created_at,  "created at"
+- resumes.each do |resume|
+  tr
+    td = resume.user.email
+    td = resume.position
+    td = resume.created_at

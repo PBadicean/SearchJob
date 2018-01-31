@@ -1,0 +1,8 @@
+= search_form_for [:admin, :users, @q],
+  builder: SimpleForm::FormBuilder,
+  html: { novalidate: true } do |f|
+  = f.input :name_or_email_cont
+  = f.input :gender_eq, as: :radio_buttons,
+                     collection: User.genders.keys
+  = render 'shared/fields/ransack/daterange', f: f, field: :created_at
+  = f.submit 'Search', class: 'btn btn-sm btn-success btn-block'

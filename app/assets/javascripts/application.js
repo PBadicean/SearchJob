@@ -15,6 +15,11 @@
 //= require cocoon
 //= require popper
 //= require bootstrap
+//= require bootstrap-datepicker
+//= require jquery.inputmask
+//= require jquery.inputmask.extensions
+//= require jquery.inputmask.numeric.extensions
+//= require jquery.inputmask.date.extensions
 //= require rails-ujs
 //= require jquery.geocomplete
 //= require_tree .

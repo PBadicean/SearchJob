@@ -3,7 +3,8 @@ class Admin::Users::AdminsController < Admin::BaseController
   before_action :set_admin, only: [:edit, :update, :destroy]
 
   def index
-    @users = Admin.all.page(params[:page])
+    @q = Admin.ransack(params[:q])
+    @users = @q.result(distinct: true).page(params[:page])
   end
 
   def new

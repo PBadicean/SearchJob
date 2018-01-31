@@ -2,4 +2,4 @@
   collection: @users,
   table: render('shared/users/partials/table', users: @users),
   create: nil,
-  filter: nil
+  filter: render('shared/users/partials/filter', users: :admins)

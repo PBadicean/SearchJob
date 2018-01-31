@@ -1,0 +1,5 @@
+= render 'shared/templates/index',
+  collection: @resumes,
+  table: render('admin/resumes/partials/table', resumes: @resumes),
+  create: nil,
+  filter: render('admin/resumes/partials/filter', resumes: :resumes)

@@ -1,0 +1,11 @@
+= search_form_for [:admin, @q],
+  builder: SimpleForm::FormBuilder,
+  html: { novalidate: true } do |f|
+  = f.input :position_or_user_email_cont
+  = f.input :category_id_eq,
+            collection: Category.only_parents,
+            as: :grouped_select,
+            group_method: :subcategories,
+            prompt: 'Select One'
+  = render 'shared/fields/ransack/daterange', f: f, field: :created_at
+  = f.submit 'Search', class: 'btn btn-sm btn-success btn-block'

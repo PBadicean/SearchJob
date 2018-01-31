@@ -29,13 +29,15 @@ Category.create do |subcategory|
   subcategory.parent_id=Category.first.try(:id)
 end
 
-Resume.create do |resume|
-  resume.position = 'RoR Programmer'
-  resume.salary = '35000'
-  resume.user = Candidate.first
-  resume.category = Category.where(name: 'Programming').first
-  resume.tags = "Ruby, Rails, Js, JQuery, Python, HTML, CSS, SCSS"
-  resume.about_me = "My full name is Bushueva Valeria Dmitrievna. I was born in Moscow, Russia in 2002."
+7.times do |i|
+  Resume.create do |resume|
+    resume.position = "RoR Programmer #{i}"
+    resume.salary = '35000'
+    resume.user = Candidate.first
+    resume.category = Category.where(name: 'Programming').first
+    resume.tags = "Ruby, Rails, Js, JQuery, Python, HTML, CSS, SCSS"
+    resume.about_me = "My full name is Bushueva Valeria Dmitrievna. I was born in Moscow, Russia in 2002."
+  end
 end
 
 Experience.create do |experience|

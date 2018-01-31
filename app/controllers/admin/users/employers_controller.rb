@@ -3,7 +3,8 @@ class Admin::Users::EmployersController < Admin::BaseController
   before_action :set_employer, only: [:edit, :update, :destroy]
 
   def index
-    @users = Employer.all.page(params[:page])
+    @q = Employer.ransack(params[:q])
+    @users = @q.result(distinct: true).page(params[:page])
   end
 
   def new
