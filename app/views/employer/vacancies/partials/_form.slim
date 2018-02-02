@@ -3,15 +3,17 @@
   = f.input :name
   = f.input :salary
   .form-group
-    = f.label :place_id
-    input class="form-control geocomplete #{vacancy.error_class_name}"
-  = f.input :place_id, as: :hidden,
-                       input_html: { class: 'hidden-geocomplete' }
-  = f.input :experience, as: :radio_buttons,
-                         collection: Vacancy.experiences.keys
+    = render 'shared/fields/geocomplete', f: f, resource: vacancy
+
+  = f.input :experience,
+    as: :select,
+    collection: Vacancy.to_select_experience
+
   = f.input :discription
-  = f.input :schedule, as: :radio_buttons,
-                       collection: Vacancy.schedules.keys
+  = f.input :schedule,
+    as: :radio_buttons,
+    collection: Vacancy.schedules.keys
+
   = f.input :category_id, as: :grouped_select,
                           collection: Category.only_parents,
                           group_method: :subcategories,

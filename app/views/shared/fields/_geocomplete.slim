@@ -1,0 +1,5 @@
+= f.label :place_id
+input class="form-control geocomplete #{resource.error_class_name}"
+= f.input :place_id,
+  as: :hidden,
+  input_html: { class: 'hidden-geocomplete' }
