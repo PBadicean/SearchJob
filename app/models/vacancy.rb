@@ -26,9 +26,14 @@ class Vacancy < ApplicationRecord
   include Shared::Place
 
   enum schedule: { remote: 0, full: 1 }
-  enum experience: { 'None' => 0, '1-3 years' => 1, '3-6 years' => 2 }
+  enum experience: { no_experience: 0, between_1_and_3: 1, between_3_and_6: 2 }
 
   validates :name, :salary, :experience, :place_id,
             :discription, :schedule, presence: true
 
+  class << self
+    def to_select_experience
+      Vacancy.experiences.keys.map { |key| [Vacancy.human_enum_name(:experience, key), key] }
+    end
+  end
 end

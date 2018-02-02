@@ -1,9 +1,7 @@
 = simple_form_for candidate, url: url do |f|
   = f.simple_fields_for :info do |p|
     .form-group
-      = p.label :place_id
-      input class="form-control geocomplete #{candidate.error_class_name}"
-    = p.input :place_id, as: :hidden, input_html: { class: 'hidden-geocomplete' }
+      = render 'shared/fields/geocomplete', f: p, resource: candidate
   = f.input :name
   = f.input :email
   = f.input :password
