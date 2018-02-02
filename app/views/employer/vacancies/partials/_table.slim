@@ -1,0 +1,11 @@
+tr
+  th Name
+  th Created at
+  th Action
+- vacancies.each do |vacancy|
+  tr
+    td = vacancy.name
+    td = vacancy.created_at.strftime('%F')
+    td
+      = link_to 'Edit', edit_employer_vacancy_path(vacancy)
+      p= link_to 'Destroy', employer_vacancy_path(vacancy), method: :delete

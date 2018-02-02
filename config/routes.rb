@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   namespace :employer do
     root 'dashboard#show', as: :root
+    resources :vacancies
   end
 
   namespace :admin do
