@@ -46,8 +46,4 @@ class Candidate < User
            foreign_key: :user_id,
            dependent: :destroy
 
-  def error_class_name
-    errors.messages[:'info.place_id'].any? ? 'is-invalid' : ''
-  end
-
 end

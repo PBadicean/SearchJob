@@ -1,4 +1,4 @@
-= render 'common/errors', resource: @resume
+= render 'common/errors', resource: resume
 = simple_form_for path do |f|
   = f.input :position
   = f.input :salary
@@ -12,7 +12,7 @@
 
   h2 Опыт работы
   = f.simple_fields_for :experiences do |experience|
-    = render 'experience_fields', :f => experience
+    = render 'candidate/resumes/experience_fields', :f => experience
 
   .form-group
     = link_to_add_association 'add experience', f, :experiences, class: 'btn btn-info btn-sm'

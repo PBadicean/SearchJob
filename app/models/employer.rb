@@ -40,6 +40,10 @@ class Employer < User
            inverse_of: :user,
            dependent: :destroy
 
+  has_many :vacancies,
+    foreign_key: :user_id,
+    dependent: :destroy
+
   accepts_nested_attributes_for :info
 
 end
