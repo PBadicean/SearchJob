@@ -2,6 +2,7 @@
 = simple_form_for path do |f|
   = f.input :name
   = f.input :salary
+
   .form-group
     = render 'shared/fields/geocomplete', f: f, resource: vacancy
 
@@ -14,10 +15,12 @@
     as: :radio_buttons,
     collection: Vacancy.schedules.keys
 
-  = f.input :category_id, as: :grouped_select,
-                          collection: Category.only_parents,
-                          group_method: :subcategories,
-                          prompt: 'Select One'
+  = f.input :category_id,
+    as: :grouped_select,
+    collection: Category.only_parents,
+    group_method: :subcategories,
+    prompt: 'Select One'
+
   = f.input :key_skills
   .text-right
     = f.button :submit, class: 'btn btn-primary'
