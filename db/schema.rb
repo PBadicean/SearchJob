@@ -87,7 +87,7 @@ ActiveRecord::Schema.define(version: 20180201170710) do
     t.string "name", null: false
     t.string "place_id", null: false
     t.integer "user_id", null: false
-    t.bigint "salary", null: false
+    t.integer "salary", null: false
     t.text "discription", null: false
     t.integer "schedule", null: false
     t.integer "experience", null: false

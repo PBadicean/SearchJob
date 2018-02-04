@@ -23,8 +23,6 @@
 
 class Vacancy < ApplicationRecord
 
-  include Shared::Place
-
   enum schedule: { remote: 0, full: 1 }
   enum experience: { no_experience: 0, between_1_and_3: 1, between_3_and_6: 2 }
 
@@ -36,4 +34,9 @@ class Vacancy < ApplicationRecord
       Vacancy.experiences.keys.map { |key| [Vacancy.human_enum_name(:experience, key), key] }
     end
   end
+
+  def error_class_name
+    errors.messages[:'place_id'].any? ? 'is-invalid' : ''
+  end
+
 end

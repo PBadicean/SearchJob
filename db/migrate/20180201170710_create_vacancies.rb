@@ -4,7 +4,7 @@ class CreateVacancies < ActiveRecord::Migration[5.1]
       t.string  :name, null: false
       t.string  :place_id,  index: true, null: false
       t.integer :user_id, index: true, null: false
-      t.bigint  :salary, null: false
+      t.integer :salary, null: false
       t.text    :discription, null: false
       t.integer :schedule, null: false
       t.integer :experience, null: false
