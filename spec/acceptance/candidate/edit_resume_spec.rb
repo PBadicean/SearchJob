@@ -32,7 +32,7 @@ feature 'Candidate edit resume' do
       select 'May', from: select_date('date_end_2i')
       fill_in 'Company', with: 'Audi'
       fill_in 'Duty', with: 'Duty Duty Duty'
-      fill_in 'Position', with: 'Junior'
+      fill_in 'Position', with: 'Teamled'
     end
 
     click_on 'Update Resume'

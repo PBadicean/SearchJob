@@ -8,7 +8,8 @@
             group_method: :subcategories,
             prompt: 'Select One'
   = f.input :about_me, as: :text
-  = f.input :tags
+
+  = f.input :tags, input_html: { class: 'tags' }
 
   h2 Опыт работы
   = f.simple_fields_for :experiences do |experience|

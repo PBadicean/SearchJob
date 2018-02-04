@@ -1,2 +1,2 @@
 $ ->
-  $('#resume_tags').tagit();
+  $('.tags').tagit();

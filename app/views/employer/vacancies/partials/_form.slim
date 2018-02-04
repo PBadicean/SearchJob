@@ -21,6 +21,7 @@
     group_method: :subcategories,
     prompt: 'Select One'
 
-  = f.input :key_skills
+  = f.input :key_skills, input_html: { class: 'tags' }
+
   .text-right
     = f.button :submit, class: 'btn btn-primary'
