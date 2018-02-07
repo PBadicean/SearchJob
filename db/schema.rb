@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180201170710) do
+ActiveRecord::Schema.define(version: 20180206153755) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,7 +87,6 @@ ActiveRecord::Schema.define(version: 20180201170710) do
     t.string "name", null: false
     t.string "place_id", null: false
     t.integer "user_id", null: false
-    t.integer "salary", null: false
     t.text "discription", null: false
     t.integer "schedule", null: false
     t.integer "experience", null: false
@@ -95,6 +94,8 @@ ActiveRecord::Schema.define(version: 20180201170710) do
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "salary_start"
+    t.integer "salary_end"
     t.index ["place_id"], name: "index_vacancies_on_place_id"
     t.index ["user_id"], name: "index_vacancies_on_user_id"
   end
