@@ -1,8 +1,4 @@
-nav.navbar.navbar-expand-sm.navbar-dark.bg-dark.mb-4
-  = link_to 'SearchJoB', root_path, class: 'navbar-brand'
-  #nav-content.collapse.navbar-collapse.justify-content-end
-    ul.navbar-nav
-      = link_to 'Sign out',
-                 destroy_user_session_path,
-                 method: :delete,
-                 class: 'nav-link'
+= link_to 'Sign out',
+           destroy_user_session_path,
+           method: :delete,
+           class: 'nav-link'

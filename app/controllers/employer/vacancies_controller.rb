@@ -42,8 +42,8 @@ class Employer::VacanciesController < Employer::BaseController
 
    def vacancy_params
     params.require(:vacancy).permit(
-      :name, :salary, :category_id, :discription, :experience,
-      :user_id, :key_skills, :place_id, :schedule
+      :name, :salary_start, :salary_end, :discription, :experience,
+      :user_id, :key_skills, :place_id, :schedule, :category_id
     )
    end
 

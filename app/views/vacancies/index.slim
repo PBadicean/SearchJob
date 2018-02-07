@@ -1,0 +1,4 @@
+- @vacancies.each do |vacancy|
+  ul
+    li
+      = link_to "#{vacancy.name}", vacancy_path(vacancy)

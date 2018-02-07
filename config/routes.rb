@@ -29,7 +29,7 @@ Rails.application.routes.draw do
     resources :employers
   end
 
-
+  resources :vacancies
   resources :resumes
 
   get 'profile', action: :edit, controller: 'profiles'
