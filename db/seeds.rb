@@ -57,3 +57,16 @@ Experience.create do |experience|
   experience.resume=Resume.first
   experience.duty='The hoodies, jackets, hats, collectibles, posters, toys, and other official online destination for Call of Duty t-shirts,exclusive apparel and accessories.'
 end
+
+Vacancy.create do |vacancy|
+  vacancy.name="Ruby Programmer"
+  vacancy.salary_min='25000'
+  vacancy.salary_max='50000'
+  vacancy.discription='The hoodies, jackets, hats, collectibles, posters, toys, and other official online destination for Call of Duty t-shirts,exclusive apparel and accessories'
+  vacancy.experience=1
+  vacancy.employer=Employer.first
+  vacancy.place_id='1234'
+  vacancy.schedule=1
+  vacancy.category_id=Category.first
+  vacancy.key_skills='Ruby, Programming, Java'
+end

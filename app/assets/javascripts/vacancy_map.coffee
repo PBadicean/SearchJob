@@ -8,7 +8,6 @@ $ ->
         map: map
         position: place.geometry.location)
       map.setCenter marker.getPosition()
-    return
 
   service = new (google.maps.places.PlacesService)(map)
   service.getDetails request, callback
