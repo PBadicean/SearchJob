@@ -3,9 +3,9 @@
   = f.input :name
   .row
     .col-md-6
-      = f.input :salary_start
+      = f.input :salary_min
     .col-md-6
-      = f.input :salary_end
+      = f.input :salary_max
 
   .form-group
     = render 'shared/fields/geocomplete', f: f, resource: vacancy

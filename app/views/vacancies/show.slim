@@ -6,11 +6,11 @@
       dt.col-sm-4
         | Salary
       dd.col-sm-8
-        | from #{@vacancy.salary_start} to #{@vacancy.salary_end} RUB hands
+        | from #{@vacancy.salary_min} to #{@vacancy.salary_max} RUB hands
       dt.col-sm-4
         | Required experience:
       dd.col-sm-8
-        = Vacancy.human_enum_name('experiences', @vacancy.experience)
+        = @vacancy.human_enum_name(:experience)
       dt.col-sm-4
         | Work schedule:
       dd.col-sm-8
