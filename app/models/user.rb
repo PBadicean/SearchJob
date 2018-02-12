@@ -44,16 +44,15 @@ class User < ApplicationRecord
   validates :name, presence: true
 
   def self.find_for_oauth(auth)
-    identity = Identity.where(provider: auth.provider, uid: auth.uid.to_s).first
+    identity = Identity.find_by(provider: auth.provider, uid: auth.uid.to_s)
     return identity.user if identity
 
     email = auth.info.email
-    user = User.where(email: email).first
+    user = User.find_by(email: email)
     unless user
-      user = User.new(email: email,
-                      password: Devise.friendly_token[0, 20],
-                      role: 2,
-                      name: auth.info.name)
+      user = Candidate.new(email: email,
+                          password: Devise.friendly_token[0, 20],
+                          name: auth.info.name)
       user.save!
     end
     user.identities.create!(provider: auth.provider, uid: auth.uid.to_s) if user

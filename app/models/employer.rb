@@ -32,8 +32,6 @@ class Employer < User
 
   include Shared::Roles
 
-  default_scope { employer }
-
   has_one :info,
            foreign_key: :user_id,
            class_name: 'Employer::Info',
@@ -41,9 +39,11 @@ class Employer < User
            dependent: :destroy
 
   has_many :vacancies,
-    foreign_key: :user_id,
-    dependent: :destroy
+            foreign_key: :user_id,
+            dependent: :destroy
 
   accepts_nested_attributes_for :info
+
+  default_scope { employer }
 
 end

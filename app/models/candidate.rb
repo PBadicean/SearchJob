@@ -32,19 +32,19 @@ class Candidate < User
 
   include Shared::Roles
 
-  default_scope { candidate }
-
   has_one :info,
            foreign_key: :user_id,
            class_name: 'Candidate::Info',
            inverse_of: :user,
            dependent: :destroy
 
+  has_many :resumes,
+            foreign_key: :user_id,
+            dependent: :destroy
+
   accepts_nested_attributes_for :info
 
-  has_many :resumes,
-           foreign_key: :user_id,
-           dependent: :destroy
+  default_scope { candidate }
 
   def error_class_name
     errors.messages[:'info.place_id'].any? ? 'is-invalid' : ''
