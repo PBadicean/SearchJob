@@ -29,6 +29,9 @@ gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'jquery-inputmask-rails'
 gem 'bootstrap-datepicker-rails'
 
+gem 'omniauth'
+gem 'omniauth-facebook'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'

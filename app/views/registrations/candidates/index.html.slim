@@ -2,3 +2,6 @@ h2 Регистрация
 = render 'shared/users/candidates/partials/form',
   url: registrations_candidates_path,
   candidate: @candidate
+= link_to "Sign in with Facebook",
+           omniauth_authorize_path(:user, :facebook),
+           class: 'btn btn-success'
