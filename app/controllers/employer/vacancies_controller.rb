@@ -1,10 +1,9 @@
 class Employer::VacanciesController < Employer::BaseController
 
-  before_action :set_employer, only: :index
   before_action :set_vacancy, only: [:edit, :update, :destroy]
 
   def index
-    @vacancies = @employer.vacancies.page(params[:page])
+    @vacancies = current_user.vacancies.page(params[:page])
   end
 
   def new
@@ -49,10 +48,6 @@ class Employer::VacanciesController < Employer::BaseController
 
   def set_vacancy
     @vacancy = Vacancy.find(params[:id])
-  end
-
-  def set_employer
-    @employer = Employer.find(current_user.id)
   end
 
 end

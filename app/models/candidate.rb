@@ -42,7 +42,9 @@ class Candidate < User
             foreign_key: :user_id,
             dependent: :destroy
 
-  has_many :responses
+  has_many :responses,
+            foreign_key: :user_id,
+            dependent: :destroy
 
   accepts_nested_attributes_for :info
 

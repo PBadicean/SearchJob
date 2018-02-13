@@ -2,7 +2,7 @@
   .col-md-8
     = render "vacancies/partials/info", vacancy: @vacancy
     = render "vacancies/partials/skills", vacancy: @vacancy
-    = render "vacancies/partials/mapp", vacancy: @vacancy
+    = render "vacancies/partials/map", vacancy: @vacancy
 
     - if current_user.present? && current_user.candidate?
       h4
