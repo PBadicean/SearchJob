@@ -1,8 +1,8 @@
 <section class="section summary-section">
   <div class="row">
     <div class="col-md-3">
-      <% if resume.user.avatar?%>
-        <%= image_tag resume.user.avatar.url, alt: "", size: "170x170" %>
+      <% if resume.candidate.avatar?%>
+        <%= image_tag resume.candidate.avatar.url, alt: "", size: "170x170" %>
       <% else %>
         <%= image_tag "NoAvatar.jpg", alt: "", size: "170x170" %>
       <%end%>
@@ -24,20 +24,20 @@
           <%= resume.category.name %>
         </dd>
         <dt class="col-sm-3">Date of Birth</dt>
-        <% if resume.user.birthday.present? %>
-          <dd class="col-sm-9"><%= resume.user.birthday %></dd>
+        <% if resume.candidate.birthday.present? %>
+          <dd class="col-sm-9"><%= resume.candidate.birthday %></dd>
         <% else %>
           <dd class="col-sm-9">not specified</dd>
         <% end %>
         <dt class="col-sm-3">Gender</dt>
-        <% if resume.user.gender.present?%>
-          <dd class="col-sm-9"><%= resume.user.gender %></dd>
+        <% if resume.candidate.gender.present?%>
+          <dd class="col-sm-9"><%= resume.candidate.gender %></dd>
         <% else %>
           <dd class="col-sm-9">not specified</dd>
         <% end %>
         <dt class="col-sm-3">Email</dt>
         <dd class="col-sm-9">
-          <%= resume.user.email %>
+          <%= resume.candidate.email %>
         </dd>
         <dt class="col-sm-3">City</dt>
         <dd class="col-sm-9">Milano</dd>

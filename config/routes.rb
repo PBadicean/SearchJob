@@ -5,11 +5,13 @@ Rails.application.routes.draw do
   namespace :candidate do
     root 'dashboard#show', as: :root
     resources :resumes
+    resources :responses
   end
 
   namespace :employer do
     root 'dashboard#show', as: :root
     resources :vacancies
+    resources :responses
   end
 
   namespace :admin do

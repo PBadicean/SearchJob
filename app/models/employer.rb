@@ -42,6 +42,8 @@ class Employer < User
             foreign_key: :user_id,
             dependent: :destroy
 
+  has_many :responses, through: :vacancies
+
   accepts_nested_attributes_for :info
 
   default_scope { employer }

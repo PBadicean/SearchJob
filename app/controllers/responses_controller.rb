@@ -3,13 +3,6 @@ class ResponsesController < ApplicationController
   before_action :set_vacancy
 
   def create
-    @response = @vacancy.responses.create(
-      response_params.merge(candidate: current_user)
-    )
-  end
-
-
-  def create
     @response = @vacancy.responses.new(
       response_params.merge(candidate: current_user)
     )
