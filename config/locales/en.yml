@@ -55,3 +55,7 @@ en:
       updated: 'Vacancy successful updated'
       created: 'New Vacancy successful Added'
       destroyed: 'Vacancy destroyed'
+    responses:
+      updated: 'Your Response successful updated'
+      created: 'Your Response successful Added'
+      destroyed: 'Your Response destroyed'

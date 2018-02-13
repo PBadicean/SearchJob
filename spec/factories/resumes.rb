@@ -25,6 +25,6 @@ FactoryBot.define do
     sequence(:tags) { |n| "New_tag#{n}" }
     salary 25000
     category
-    user
+    candidate
   end
 end

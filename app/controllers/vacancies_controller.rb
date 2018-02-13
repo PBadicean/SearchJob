@@ -7,6 +7,7 @@ class VacanciesController < ApplicationController
 
   def show
     @vacancy = Vacancy.find(params[:id])
+    @response = @vacancy.responses.new
   end
 
 end
