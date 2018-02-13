@@ -1,0 +1,22 @@
+h1.display-4
+  = vacancy.name
+dl.row
+  dt.col-sm-4
+    | Salary
+  dd.col-sm-8
+    | from #{vacancy.salary_min} to #{vacancy.salary_max} RUB hands
+  dt.col-sm-4
+    | Required experience:
+  dd.col-sm-8
+    = vacancy.human_enum_name(:experience)
+  dt.col-sm-4
+    | Work schedule:
+  dd.col-sm-8
+    = vacancy.schedule
+  - if vacancy.info.present?
+    dt.col-sm-4
+      | Company name:
+    dd.col-sm-8
+      = link_to vacancy.info.company_name
+p
+  = vacancy.discription

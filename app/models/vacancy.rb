@@ -30,6 +30,8 @@
 class Vacancy < ApplicationRecord
 
   belongs_to :employer, class_name: 'Employer', foreign_key: :user_id
+  belongs_to :category
+  has_many :responses
 
   delegate :info, to: :employer
 

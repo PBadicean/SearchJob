@@ -42,6 +42,8 @@ class Candidate < User
             foreign_key: :user_id,
             dependent: :destroy
 
+  has_many :responses
+
   accepts_nested_attributes_for :info
 
   default_scope { candidate }

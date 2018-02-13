@@ -20,7 +20,7 @@
 
 class Resume < ApplicationRecord
 
-  belongs_to :user
+  belongs_to :candidate, class_name: 'Candidate', foreign_key: :user_id
   belongs_to :category
   has_many :experiences
 
