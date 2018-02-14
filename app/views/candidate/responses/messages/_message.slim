@@ -1,0 +1,18 @@
+- response.messages.each do |message|
+  - if message.persisted?
+    ul.chat
+      li.right.clearfix
+        .header
+          strong.pull-right.primary-font= message.user.name
+          small.text-muted
+            span.glyphicon.glyphicon-time
+            = message.created_at.strftime('%r')
+        span.chat-img.pull-right
+          .row
+            .col-md-1
+              - if message.user.candidate?
+                = image_tag "fff&text=ME.png", alt: "User Avatar"
+              - else
+                = image_tag "fff&text=U.png", alt: "User Avatar"
+            .col-md-11
+              p= message.message_text

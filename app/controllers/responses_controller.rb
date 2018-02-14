@@ -8,6 +8,7 @@ class ResponsesController < ApplicationController
     )
     if @response.save
       flash[:notice] = t('messages.responses.created')
+      @response.messages.create(message_text: @response.discription, user_id: current_user.id)
     end
     redirect_to vacancy_path(@vacancy)
   end

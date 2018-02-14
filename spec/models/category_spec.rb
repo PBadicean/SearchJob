@@ -17,5 +17,6 @@ RSpec.describe Category, type: :model do
 
   it { should have_many(:subcategories) }
   it { should have_many(:resumes) }
+  it { should have_many(:vacancies) }
 
 end

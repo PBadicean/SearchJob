@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   namespace :candidate do
     root 'dashboard#show', as: :root
     resources :resumes
-    resources :responses
+    resources :responses do
+      resources :messages, module: 'responses'
+    end
   end
 
   namespace :employer do

@@ -10,13 +10,13 @@
 #  updated_at  :datetime         not null
 #
 
-class Response < ApplicationRecord
+require 'rails_helper'
 
-  belongs_to :vacancy
-  belongs_to :candidate, class_name: 'Candidate', foreign_key: :user_id
+RSpec.describe Response, type: :model do
 
-  has_many :messages, class_name: 'Response::Message'
+  it { should belong_to(:vacancy) }
+  it { should belong_to(:candidate) }
 
-  validates :discription, presence: true
+  it { should validate_presence_of :discription }
 
 end

@@ -46,6 +46,8 @@ class Candidate < User
             foreign_key: :user_id,
             dependent: :destroy
 
+  has_many :messages, class_name: 'Response::Message', foreign_key: :user_id
+
   accepts_nested_attributes_for :info
 
   default_scope { candidate }

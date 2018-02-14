@@ -43,6 +43,7 @@ class Employer < User
             dependent: :destroy
 
   has_many :responses, through: :vacancies
+  has_many :messages, class_name: 'Response::Message', foreign_key: :user_id
 
   accepts_nested_attributes_for :info
 
