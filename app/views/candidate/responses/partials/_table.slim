@@ -4,6 +4,9 @@ tr
   th Employer
 - responses.each do |response|
   tr
-    td = response.discription
-    td = link_to "#{response.vacancy.name}", vacancy_path(response.vacancy)
-    td = response.vacancy.employer.email
+    td
+      = link_to "#{response.discription}", candidate_response_path(response)
+    td
+      = link_to "#{response.vacancy.name}", vacancy_path(response.vacancy)
+    td
+      = response.vacancy.employer.email

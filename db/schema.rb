@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180212204452) do
+ActiveRecord::Schema.define(version: 20180213212129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,14 @@ ActiveRecord::Schema.define(version: 20180212204452) do
     t.string "provider"
     t.string "uid"
     t.index ["user_id"], name: "index_identities_on_user_id"
+  end
+
+  create_table "response_messages", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "response_id"
+    t.string "message_text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "responses", force: :cascade do |t|

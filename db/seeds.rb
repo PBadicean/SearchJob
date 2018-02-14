@@ -65,8 +65,9 @@ Vacancy.create do |vacancy|
   vacancy.schedule = 1
   vacancy.experience = 1
   vacancy.employer = Employer.first
-  vacancy.category_id = Category.first
+  vacancy.category = Category.first
   vacancy.discription = 'The hoodies, jackets, hats, collectibles, posters, toys, and other official online destination for Call of Duty t-shirts,exclusive apparel and accessories'
   vacancy.place_id = 'ChIJ53USP0nBhkcRjQ50xhPN_zw'
   vacancy.key_skills = 'Ruby, Programming, Java'
+  vacancy.save!
 end

@@ -1,0 +1,4 @@
+.card-footer
+  = simple_form_for @message, url: candidate_response_messages_path(@response) do |f|
+    = f.input :message_text, placeholder: 'Type your message here...'
+    = f.button :submit, 'Send', class: 'button btn btn-info btn-sm'
