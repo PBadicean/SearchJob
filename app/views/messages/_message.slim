@@ -11,8 +11,8 @@
           .row
             .col-md-1
               - if message.user.candidate?
-                = image_tag "fff&text=ME.png", alt: "User Avatar"
+                = image_tag "man_candidate.png", alt: "", size: "60x50"
               - else
-                = image_tag "fff&text=U.png", alt: "User Avatar"
+                  = image_tag "man_employer.png", alt: "", size: "60x50"
             .col-md-11
               p= message.message_text
