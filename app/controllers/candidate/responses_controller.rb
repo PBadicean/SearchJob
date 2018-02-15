@@ -10,7 +10,7 @@ class Candidate::ResponsesController < Candidate::BaseController
     @message = @response.messages.new
   end
 
-  private
+  protected
 
   def load_response
     @response = Response.includes(messages: :user).find(params[:id])

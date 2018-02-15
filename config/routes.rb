@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   namespace :employer do
     root 'dashboard#show', as: :root
     resources :vacancies
-    resources :responses
+    resources :responses do
+      resources :messages, module: 'responses'
+    end
   end
 
   namespace :admin do
