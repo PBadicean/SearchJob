@@ -38,7 +38,8 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'factory_bot_rails'
   gem 'rspec-rails'
-  gem "capybara-webkit"
+  # todo uncomment
+  # gem "capybara-webkit"
   gem 'database_cleaner'
 end
 
