@@ -7,7 +7,7 @@ export default class CategoryFilter extends Component {
     return (
       <div className="form-group">
         <h6>Category</h6>
-          <CategoryCard categories={CATEGORIES}/>
+        <CategoryCard categories={CATEGORIES}/>
       </div>
     );
   }

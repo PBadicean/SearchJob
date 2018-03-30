@@ -5,9 +5,9 @@ export default class SheduleFilter extends Component {
     return (
       <div className="form-group">
         <h6>Shedule</h6>
-          <a href="#">Remote</a>
-          <br/>
-          <a href="#">Full</a>
+        <a href="#">Remote</a>
+        <br/>
+        <a href="#">Full</a>
       </div>
     );
   }

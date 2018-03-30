@@ -13,7 +13,7 @@ export default class ResultsFilter extends Component {
             <div className="float-right">
               <select className="custom-select my-1 mr-sm-2">
                 <option>Sort for Date</option>
-              <option>Sort for salary-big</option>
+                <option>Sort for salary-big</option>
               </select>
             </div>
           </div>
