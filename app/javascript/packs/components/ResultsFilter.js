@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import VacanciesList from '../components/VacanciesList';
+import { connect } from 'react-redux';
 
-export default class ResultsFilter extends Component {
+class ResultsFilter extends Component {
   render(){
     return (
       <div>
@@ -18,8 +19,14 @@ export default class ResultsFilter extends Component {
             </div>
           </div>
         </div>
-        <VacanciesList/>
+        <VacanciesList items={this.props.vacancies}/>
       </div>
     )
   }
 }
+
+export default connect((state) => {
+  return {
+    vacancies: state.vacancies.items
+  };
+})(ResultsFilter);
