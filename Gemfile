@@ -28,7 +28,7 @@ gem 'cocoon', '~> 1.2.0'
 gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'jquery-inputmask-rails'
 gem 'bootstrap-datepicker-rails'
-
+gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
 gem 'omniauth'
 gem 'omniauth-facebook'
 

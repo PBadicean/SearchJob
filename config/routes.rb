@@ -40,6 +40,7 @@ Rails.application.routes.draw do
   end
 
   resources :resumes
+  resources :search
 
   get 'profile', action: :edit, controller: 'profiles'
   patch 'profile', action: :update, controller: 'profiles'
