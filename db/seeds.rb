@@ -66,8 +66,9 @@ Vacancy.create do |vacancy|
   vacancy.experience = 1
   vacancy.employer = Employer.first
   vacancy.category = Category.first
+  latitude = 45.4642035
+  longitude = 9.18998199999999
   vacancy.discription = 'The hoodies, jackets, hats, collectibles, posters, toys, and other official online destination for Call of Duty t-shirts,exclusive apparel and accessories'
-  vacancy.place_id = 'ChIJ53USP0nBhkcRjQ50xhPN_zw'
   vacancy.key_skills = 'Ruby, Programming, Java'
   vacancy.save!
 end

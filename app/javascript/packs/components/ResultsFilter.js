@@ -4,11 +4,12 @@ import { connect } from 'react-redux';
 
 class ResultsFilter extends Component {
   render(){
+    const { vacancies } = this.props
     return (
       <div>
         <div className="row">
           <div className="col-md-8">
-            <h4>Searched vacancies 10695</h4>
+            <h4>Searched vacancies {vacancies.length}</h4>
           </div>
           <div className="col-md-4">
             <div className="float-right">
@@ -19,13 +20,14 @@ class ResultsFilter extends Component {
             </div>
           </div>
         </div>
-        <VacanciesList items={this.props.vacancies}/>
+        <VacanciesList vacancies={vacancies}/>
       </div>
     )
   }
 }
 
 export default connect((state) => {
+  console.log(state);
   return {
     vacancies: state.vacancies.items
   };

@@ -94,6 +94,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-webkit (1.1.0)
+      capybara (~> 2.0, >= 2.0.2)
+      json
     carrierwave (1.2.1)
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
@@ -128,6 +131,7 @@ GEM
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.18)
+    geocoder (1.4.7)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     hashie (3.5.7)
@@ -143,6 +147,7 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
+    json (2.1.0)
     jwt (1.5.6)
     kaminari (1.1.1)
       activesupport (>= 4.1.0)
@@ -331,12 +336,14 @@ DEPENDENCIES
   bullet
   byebug
   capybara (~> 2.13)
+  capybara-webkit
   carrierwave (~> 1.0)
   cocoon (~> 1.2.0)
   coffee-rails (~> 4.2)
   database_cleaner
   devise
   factory_bot_rails
+  geocoder
   jbuilder (~> 2.5)
   jquery-inputmask-rails
   jquery-rails

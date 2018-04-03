@@ -31,6 +31,7 @@ gem 'bootstrap-datepicker-rails'
 gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'geocoder'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -38,8 +39,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'factory_bot_rails'
   gem 'rspec-rails'
-  # todo uncomment
-  # gem "capybara-webkit"
+  gem "capybara-webkit"
   gem 'database_cleaner'
 end
 

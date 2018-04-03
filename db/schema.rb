@@ -10,16 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180213212129) do
+ActiveRecord::Schema.define(version: 20180402150154) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "candidate_info", force: :cascade do |t|
-    t.string "place_id", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
+    t.string "city"
+    t.string "country"
     t.index ["user_id"], name: "index_candidate_info_on_user_id"
   end
 
@@ -108,7 +111,6 @@ ActiveRecord::Schema.define(version: 20180213212129) do
 
   create_table "vacancies", force: :cascade do |t|
     t.string "name", null: false
-    t.string "place_id", null: false
     t.integer "user_id", null: false
     t.integer "salary_min"
     t.integer "salary_max"
@@ -119,9 +121,12 @@ ActiveRecord::Schema.define(version: 20180213212129) do
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
+    t.string "city"
+    t.string "country"
     t.index ["category_id"], name: "index_vacancies_on_category_id"
     t.index ["experience"], name: "index_vacancies_on_experience"
-    t.index ["place_id"], name: "index_vacancies_on_place_id"
     t.index ["salary_max"], name: "index_vacancies_on_salary_max"
     t.index ["salary_min"], name: "index_vacancies_on_salary_min"
     t.index ["schedule"], name: "index_vacancies_on_schedule"

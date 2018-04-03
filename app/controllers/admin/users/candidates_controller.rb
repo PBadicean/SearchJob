@@ -45,7 +45,7 @@ class Admin::Users::CandidatesController < Admin::BaseController
 
   def candidate_params
     params.require(:candidate).permit :email, :name, :password, :password_confirmation,
-                                      info_attributes: %i[place_id]
+                                      info_attributes: %i[latitude longitude]
   end
 
   def edit_candidate_params
