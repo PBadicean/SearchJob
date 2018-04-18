@@ -7,7 +7,7 @@ class ProfilesController < ApplicationController
   def update
     if @user.update(user_params)
       flash[:notice] = t('messages.profile.updated')
-      redirect_to profile_path
+      redirect_to root_path
     else
       render :edit
     end
@@ -23,7 +23,7 @@ class ProfilesController < ApplicationController
   def user_params
     params.require(current_user.role.to_sym).permit(
       :email, :avatar, :name, :birthday, :gender,
-      info_attributes: %i[place_id company_name]
+      info_attributes: %i[latitude longitude company_name]
     )
   end
 

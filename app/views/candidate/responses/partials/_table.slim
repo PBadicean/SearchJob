@@ -1,0 +1,12 @@
+tr
+  th My Response
+  th Vacancy
+  th Employer
+- responses.each do |response|
+  tr
+    td
+      = link_to "#{response.discription}", candidate_response_path(response)
+    td
+      = link_to "#{response.vacancy.name}", vacancy_path(response.vacancy)
+    td
+      = response.vacancy.employer.email

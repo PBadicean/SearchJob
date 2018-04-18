@@ -8,4 +8,7 @@ tr
     td = vacancy.created_at.strftime('%F')
     td
       = link_to 'Edit', edit_employer_vacancy_path(vacancy)
-      p= link_to 'Destroy', employer_vacancy_path(vacancy), method: :delete
+      br
+      = link_to 'Destroy', employer_vacancy_path(vacancy), method: :delete
+      br
+      = link_to 'Preview', vacancy_path(vacancy), target: '_blank'

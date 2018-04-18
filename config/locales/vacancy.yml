@@ -4,6 +4,6 @@ en:
       vacancy:
         experience: "Опыт"
         experiences:
-          no_experience: "No expericence"
+          no_experience: "No expericence years"
           between_1_and_3: "From 1 to 3 years"
-          between_3_and_6: "From 3 to 6"
+          between_3_and_6: "From 3 to 6 years"

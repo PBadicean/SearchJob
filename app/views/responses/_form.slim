@@ -1,0 +1,5 @@
+= render 'common/errors', resource: response
+
+= simple_form_for [vacancy, response] do |f|
+  = f.input :discription
+  = f.button :submit, 'Save', class: 'btn btn-primary'

@@ -1,0 +1,14 @@
+.row
+  .col-md-10
+    .card.card-primary
+      .card-header
+        span Response Message
+      .card-body
+        .messages
+          = render 'messages/message',
+                    response: @response
+        .new_message
+          = render 'messages/form',
+                    message: @message,
+                    response: @response,
+                    url: candidate_response_messages_path(@response)

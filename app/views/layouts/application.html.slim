@@ -14,7 +14,11 @@ html
       href="https://cdnjs.cloudflare.com/ajax/libs/tag-it/2.0/css/jquery.tagit.min.css"
     ]
   body
-    = render "layouts/navbar_#{current_user.present? ? current_user.role.to_s : 'main'}"
+    nav.navbar.navbar-expand-sm.navbar-dark.bg-info.mb-4
+      = link_to 'SearchJoB', root_path, class: 'navbar-brand'
+      #nav-content.collapse.navbar-collapse.justify-content-end
+        ul.navbar-nav
+          = render "layouts/navbar_#{current_user.present? ? current_user.role.to_s : 'main'}"
     main.container
       = flash_messages
       = yield

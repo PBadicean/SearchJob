@@ -5,7 +5,7 @@ feature 'Candidate edit resume' do
   given(:category)     { create(:category)}
   given!(:subcategory) { create(:category, name: 'Programming', parent_id: category.id)}
   given(:candidate)    { create(:candidate)}
-  given!(:resume)       { create(:resume, user: candidate)}
+  given!(:resume)       { create(:resume, candidate: candidate)}
   given!(:experience_1) { create(:experience, company: 'yandex', resume: resume) }
   given!(:experience_2) { create(:experience, company: 'google', resume: resume) }
 
@@ -45,7 +45,7 @@ feature 'Candidate edit resume' do
 
     expect(page).to_not have_content 'google'
     expect(page).to_not have_content 'Junior'
-    expect(page).to have_content resume.user.email
+    expect(page).to have_content resume.candidate.email
     expect(page).to have_content '3500'
     expect(page).to have_content 'React Programmer'
     expect(page).to have_content 'js'

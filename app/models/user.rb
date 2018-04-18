@@ -33,11 +33,30 @@ class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
 
   devise :database_authenticatable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable,
+         :omniauthable, omniauth_providers: [:facebook]
+
+  has_many :identities
 
   enum role: { admin: 0, employer: 1, candidate: 2}
   enum gender: { female: 0, male: 1}
 
   validates :name, presence: true
+
+  def self.find_for_oauth(auth)
+    identity = Identity.find_by(provider: auth.provider, uid: auth.uid.to_s)
+    return identity.user if identity
+
+    email = auth.info.email
+    user = User.find_by(email: email)
+    unless user
+      user = Candidate.new(email: email,
+                          password: Devise.friendly_token[0, 20],
+                          name: auth.info.name)
+      user.save!
+    end
+    user.identities.create!(provider: auth.provider, uid: auth.uid.to_s) if user
+    user
+  end
 
 end

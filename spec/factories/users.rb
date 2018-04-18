@@ -35,7 +35,6 @@ FactoryBot.define do
   factory :user do
     name
     email
-    role {[0, 1, 2].sample}
     password '123456789'
     password_confirmation '123456789'
   end
@@ -48,6 +47,13 @@ FactoryBot.define do
     password_confirmation '123456789'
   end
 
+  factory :employer do
+    name
+    email
+    role :employer
+    password '123456789'
+    password_confirmation '123456789'
+  end
 
   factory :admin do
     name

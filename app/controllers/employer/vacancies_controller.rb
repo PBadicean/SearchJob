@@ -1,10 +1,9 @@
 class Employer::VacanciesController < Employer::BaseController
 
-  before_action :set_employer, only: :index
   before_action :set_vacancy, only: [:edit, :update, :destroy]
 
   def index
-    @vacancies = @employer.vacancies.page(params[:page])
+    @vacancies = current_user.vacancies.page(params[:page])
   end
 
   def new
@@ -42,17 +41,13 @@ class Employer::VacanciesController < Employer::BaseController
 
    def vacancy_params
     params.require(:vacancy).permit(
-      :name, :salary, :category_id, :discription, :experience,
-      :user_id, :key_skills, :place_id, :schedule
+      :name, :salary_min, :salary_max, :discription, :experience,
+      :user_id, :key_skills, :latitude, :longitude, :schedule, :category_id
     )
    end
 
   def set_vacancy
     @vacancy = Vacancy.find(params[:id])
-  end
-
-  def set_employer
-    @employer = Employer.find(current_user.id)
   end
 
 end

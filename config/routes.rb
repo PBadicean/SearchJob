@@ -1,15 +1,29 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
+
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :vacancies
+      resources :categories
+      resources :menus
+    end
+  end
 
   namespace :candidate do
     root 'dashboard#show', as: :root
     resources :resumes
+    resources :responses do
+      resources :messages, module: 'responses'
+    end
   end
 
   namespace :employer do
     root 'dashboard#show', as: :root
     resources :vacancies
+    resources :responses do
+      resources :messages, module: 'responses'
+    end
   end
 
   namespace :admin do
@@ -29,8 +43,12 @@ Rails.application.routes.draw do
     resources :employers
   end
 
+  resources :vacancies do
+    resources :responses
+  end
 
   resources :resumes
+  resources :search
 
   get 'profile', action: :edit, controller: 'profiles'
   patch 'profile', action: :update, controller: 'profiles'

@@ -1,7 +1,11 @@
 = render 'common/errors', resource: vacancy
 = simple_form_for path do |f|
   = f.input :name
-  = f.input :salary
+  .row
+    .col-md-6
+      = f.input :salary_min
+    .col-md-6
+      = f.input :salary_max
 
   .form-group
     = render 'shared/fields/geocomplete', f: f, resource: vacancy
