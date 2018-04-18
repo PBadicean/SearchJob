@@ -3,10 +3,13 @@
 # Table name: candidate_info
 #
 #  id         :integer          not null, primary key
-#  place_id   :string           not null
 #  user_id    :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  latitude   :float
+#  longitude  :float
+#  city       :string
+#  country    :string
 #
 # Indexes
 #
@@ -20,6 +23,12 @@ class Candidate::Info < ApplicationRecord
 
   belongs_to :user
 
-  validates :place_id, presence: true
+  reverse_geocoded_by :latitude, :longitude do |obj,results|
+    if geo = results.first
+      obj.city    = geo.city
+      obj.country = geo.country
+    end
+  end
+  after_validation :reverse_geocode
 
 end

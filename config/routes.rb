@@ -2,6 +2,14 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
 
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :vacancies
+      resources :categories
+      resources :menus
+    end
+  end
+
   namespace :candidate do
     root 'dashboard#show', as: :root
     resources :resumes
@@ -40,6 +48,7 @@ Rails.application.routes.draw do
   end
 
   resources :resumes
+  resources :search
 
   get 'profile', action: :edit, controller: 'profiles'
   patch 'profile', action: :update, controller: 'profiles'

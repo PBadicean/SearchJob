@@ -2,4 +2,5 @@ $ ->
   $('.geocomplete')
     .geocomplete()
     .bind 'geocode:result', (event, result) ->
-      $('.hidden-geocomplete').val(result.place_id)
+      $('.latitude-hidden-geocomplete').val(result.geometry.location.lat())
+      $('.longitude-hidden-geocomplete').val(result.geometry.location.lng())

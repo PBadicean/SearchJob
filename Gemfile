@@ -28,9 +28,11 @@ gem 'cocoon', '~> 1.2.0'
 gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'jquery-inputmask-rails'
 gem 'bootstrap-datepicker-rails'
-
+gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'geocoder'
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

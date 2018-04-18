@@ -14,6 +14,12 @@ Candidate.create do |candidate|
   end
 end
 
+Candidate::Info.create do |candidate_info|
+  candidate_info.user = Candidate.first
+  latitude = 45.4642035
+  longitude = 9.18998199999999
+end
+
 Employer.create do |employer|
   employer.email = 'employer@mail.ru'
   employer.name = 'Employer'
@@ -58,16 +64,24 @@ Experience.create do |experience|
   experience.duty = 'The hoodies, jackets, hats, collectibles, posters, toys, and other official online destination for Call of Duty t-shirts,exclusive apparel and accessories.'
 end
 
-Vacancy.create do |vacancy|
-  vacancy.name = "Ruby Programmer"
-  vacancy.salary_min = 25000
-  vacancy.salary_max = 50000
-  vacancy.schedule = 1
-  vacancy.experience = 1
-  vacancy.employer = Employer.first
-  vacancy.category = Category.first
-  vacancy.discription = 'The hoodies, jackets, hats, collectibles, posters, toys, and other official online destination for Call of Duty t-shirts,exclusive apparel and accessories'
-  vacancy.place_id = 'ChIJ53USP0nBhkcRjQ50xhPN_zw'
-  vacancy.key_skills = 'Ruby, Programming, Java'
-  vacancy.save!
+Employer::Info.create do
+  company_name = 'Google'
+  user = Employer.first
+end
+
+['PHP', 'Js', 'Ruby', 'Python', 'Java'].each do |i|
+  Vacancy.create do |vacancy|
+    vacancy.name = "Programmer #{i}"
+    vacancy.salary_min = 25000
+    vacancy.salary_max = 50000
+    vacancy.schedule = 1
+    vacancy.experience = 1
+    vacancy.employer = Employer.first
+    vacancy.category = Category.first
+    vacancy.latitude = 45.4642035
+    vacancy.longitude = 9.18998199999999
+    vacancy.discription = 'The hoodies, jackets, hats, collectibles, posters, toys, and other official online destination for Call of Duty t-shirts,exclusive apparel and accessories'
+    vacancy.key_skills = 'Ruby, Programming, Java'
+    vacancy.save!
+  end
 end
