@@ -1,14 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CategoryCard from '../components/CategoryCard';
-import { CATEGORIES}  from '../constants/categories.js';
 
-export default class CategoryFilter extends Component {
-  render(){
-    return (
-      <div className="form-group">
-        <h6>Category</h6>
-        <CategoryCard categories={CATEGORIES}/>
-      </div>
-    );
-  }
+export default function CategoryFilter(props) {
+  return (
+    <div className="form-group">
+      <h6>Category</h6>
+      <CategoryCard categories={props.categories}/>
+    </div>
+  );
 }

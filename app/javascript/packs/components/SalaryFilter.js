@@ -1,22 +1,38 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
+import { setFilter } from '../actions';
 
-export default class SalaryFilter extends Component {
-  render(){
-    return (
-      <div className="form-group">
-        <h6>Salary</h6>
-        <div className="form-row">
-          <div className="col-md-5">
-            <label>start</label>
-            <input type="number" className="form-control"/>
-          </div>
+function SalaryFilter(props) {
+  return (
+    <div className="form-group">
+      <h6>Salary</h6>
+      <div className="form-row">
+        <div className="col-md-6">
+          <label>start</label>
+          <input
+            type="number"
+            className="form-control"
+            onChange={(e) => {
+              e.preventDefault();
+              props.setFilter('salary_min', e.target.value);
+            }}
+          />
+        </div>
 
-          <div className="col-md-5">
-            <label>end</label>
-            <input type="number" className="form-control"/>
-          </div>
+        <div className="col-md-6">
+          <label>end</label>
+          <input
+            type="number"
+            className="form-control"
+            onChange={(e) => {
+              e.preventDefault();
+              props.setFilter('salary_max', e.target.value);
+            }}
+          />
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
+
+export default connect(null, {setFilter})(SalaryFilter);
