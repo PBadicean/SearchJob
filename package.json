@@ -1,5 +1,23 @@
 {
   "name": "RecruterApp",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@rails/webpacker": "^3.4.1",
+    "axios": "^0.18.0",
+    "babel-preset-react": "^6.24.1",
+    "prop-types": "^15.6.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.2",
+    "eslint": "^4.19.1",
+    "eslint-plugin-destructuring": "^2.1.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-react": "^7.7.0",
+    "webpack-dev-server": "2.11.2"
+  }
 }

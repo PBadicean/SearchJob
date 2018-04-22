@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    title RecruterApp
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application', media: 'all'
+  body
+    nav.navbar.navbar-expand-sm.navbar-dark.bg-info.mb-4
+      = link_to 'SearchJoB', root_path, class: 'navbar-brand'
+      #nav-content.collapse.navbar-collapse.justify-content-end
+        ul.navbar-nav
+          = render "layouts/navbar_#{current_user.present? ? current_user.role.to_s : 'main'}"
+    main.container
+      = flash_messages
+      = yield
+      = javascript_pack_tag 'application'

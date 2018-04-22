@@ -22,7 +22,7 @@ class Registrations::CandidatesController < ActionController::Base
   def candidate_params
     params.require(:candidate).permit(
       :email, :password, :password_confirmation, :name,
-      info_attributes: %i[place_id]
+      info_attributes: %i[latitude longitude]
     )
   end
 
