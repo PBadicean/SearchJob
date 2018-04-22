@@ -15,26 +15,24 @@ export class ExperienceFilter extends Component {
         <h6>Experience</h6>
         <div className="list-group" id="list-tab" role="tablist">
           {
-            experiences.map((experience, i) => {
-              return (
-                <a
-                  href='#'
-                  key={experience}
-                  className={
-                    this.state.currentIndex == i
-                      ? 'list-group-item list-group-item-action active'
-                      : 'list-group-item list-group-item-action'
-                  }
-                  onClick={(e) => {
-                    e.preventDefault();
-                    this.setState({currentIndex: i});
-                    this.props.setFilter('experience', i);
-                  }}
-                > {experience}
-                  <br/>
-                </a>
-              );
-            })
+            experiences.map((experience, i) => (
+              <a
+                href='#'
+                key={experience}
+                className={
+                  this.state.currentIndex == i
+                    ? 'list-group-item list-group-item-action active'
+                    : 'list-group-item list-group-item-action'
+                }
+                onClick={(e) => {
+                  e.preventDefault();
+                  this.setState({currentIndex: i});
+                  this.props.setFilter('experience', i);
+                }}
+              > {experience}
+                <br/>
+              </a>
+            ))
           }
         </div>
       </div>
@@ -42,4 +40,4 @@ export class ExperienceFilter extends Component {
   }
 }
 
-export default connect(null, {setFilter})(ExperienceFilter);
+export default connect(null, { setFilter })(ExperienceFilter);

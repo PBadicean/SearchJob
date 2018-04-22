@@ -6,30 +6,25 @@ export const SET_FILTER = 'SET_FILTER';
 
 const params = {};
 
-export const fetchMenus = () => {
-  return dispatch => {
-    axios.get('http://localhost:3000/api/v1/menus')
-      .then(function(response) {
-        dispatch({
-          type: FETCH_MENUS,
-          payload: response.data
-        });
+export const fetchMenus = () => dispatch => {
+  axios.get('/api/v1/menus')
+    .then(function(response) {
+      dispatch({
+        type: FETCH_MENUS,
+        payload: response.data
       });
-  };
+    });
 };
 
-export const fetchVacancies = () => {
-  return dispatch => {
-    axios.get('http://localhost:3000/api/v1/vacancies')
-      .then(function(response) {
-        dispatch({
-          type: FETCH_VACANCIES,
-          payload: response.data
-        });
+export const fetchVacancies = () => dispatch => {
+  axios.get('/api/v1/vacancies')
+    .then(function(response) {
+      dispatch({
+        type: FETCH_VACANCIES,
+        payload: response.data
       });
-  };
+    });
 };
-
 
 export const setFilter = (key, value) => (dispatch, getState) => {
   dispatch({
@@ -61,7 +56,7 @@ export const setFilter = (key, value) => (dispatch, getState) => {
 
   params['q[category_id_eq]'] = category;
 
-  axios.get('http://localhost:3000/api/v1/vacancies', {
+  axios.get('/api/v1/vacancies', {
     params
   }).then(function(response) {
     dispatch({

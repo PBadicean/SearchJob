@@ -37,4 +37,4 @@ export class ScheduleFilter extends Component {
   }
 }
 
-export default connect(null, {setFilter})(ScheduleFilter);
+export default connect(null, { setFilter })(ScheduleFilter);

@@ -40,5 +40,4 @@ export class CategoryCard extends Component {
     );
   }
 }
-
-export default connect(null, {setFilter})(CategoryCard);
+export default connect(null, { setFilter })(CategoryCard);

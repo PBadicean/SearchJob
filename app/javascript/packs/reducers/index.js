@@ -31,7 +31,7 @@ function menusReducer(state = menusState, action) {
 function filterReducer(state = {}, action) {
   switch (action.type) {
     case SET_FILTER: {
-      const {key, value} = action;
+      const { key, value } = action;
       const nextState = {};
 
       nextState[key] = value;

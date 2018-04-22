@@ -23,4 +23,8 @@ class Category < ApplicationRecord
 
   scope :only_parents, -> { where(parent_id: nil) }
 
+  def count_work
+    Vacancy.all.where(category_id: id).count
+  end
+
 end

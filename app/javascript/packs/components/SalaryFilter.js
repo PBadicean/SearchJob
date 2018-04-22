@@ -35,4 +35,4 @@ function SalaryFilter(props) {
   );
 }
 
-export default connect(null, {setFilter})(SalaryFilter);
+export default connect(null, { setFilter })(SalaryFilter);
