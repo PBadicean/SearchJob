@@ -6,7 +6,7 @@ export default function Picker(props) {
       {
         props.options.map(option =>
           <option value={option} key={option}>
-            { option }
+            {option}
           </option>
         )
       }

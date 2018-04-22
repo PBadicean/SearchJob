@@ -24,7 +24,7 @@ export class ScheduleFilter extends Component {
                 }
                 onClick={(e) => {
                   e.preventDefault();
-                  this.setState({currentIndex: i});
+                  this.setState({ currentIndex: i });
                   this.props.setFilter('schedule', schedule);
                 }}
               > {schedule}

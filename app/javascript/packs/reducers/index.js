@@ -35,7 +35,7 @@ function filterReducer(state = {}, action) {
       const nextState = {};
 
       nextState[key] = value;
-      return {...state, ...nextState};
+      return { ...state, ...nextState };
     }
 
     default: {

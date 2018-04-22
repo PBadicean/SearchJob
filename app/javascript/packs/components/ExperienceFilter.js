@@ -4,7 +4,7 @@ import { setFilter } from '../actions';
 
 const experiences = ['No expericence years', 'From 1 to 3 years', 'From 3 to 6 years'];
 
-export class ExperienceFilter extends Component {
+class ExperienceFilter extends Component {
   state = {
     currentIndex: ''
   }
@@ -26,7 +26,7 @@ export class ExperienceFilter extends Component {
                 }
                 onClick={(e) => {
                   e.preventDefault();
-                  this.setState({currentIndex: i});
+                  this.setState({ currentIndex: i });
                   this.props.setFilter('experience', i);
                 }}
               > {experience}
